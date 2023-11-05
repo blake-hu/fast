@@ -7,7 +7,6 @@ This repository contains the code for "DoubleLingo: Causal Estimation with Large
 conda create -y --name DoubleLingo python==3.9
 conda activate DoubleLingo
 pip install -r requirements.in
-pip install -e .
 pip uninstall transformers
 pip install adapter-transformers==3.2.1
 ```

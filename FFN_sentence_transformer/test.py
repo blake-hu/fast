@@ -7,9 +7,9 @@ from sklearn.metrics import accuracy_score
 
 from sentence_transformers import SentenceTransformer
 from datasets import Dataset, load_dataset
-from transformers import BertTokenizer
+# from transformers import BertTokenizer
 import torch
-from utils.adapter import BERTAdapter
+# from utils.adapter import BERTAdapter
 from utils.feed_forward import FeedForward
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
