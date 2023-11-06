@@ -3,6 +3,7 @@ import pandas as pd
 
 from tqdm.notebook import tqdm
 
+from datasets import load_metric
 import torch
 from transformers import TrainingArguments, AdapterTrainer, logging
 from transformers.adapters import BertAdapterModel
@@ -37,8 +38,8 @@ class BERTAdapter:
         self.device = torch.device(device if torch.cuda.is_available() else "cpu")
         self.num_labels = 2 if self.category == "C" else 1
         
-        # Set logging verbosity to error to reduce log clutter
-        logging.set_verbosity_error()
+        # # Set logging verbosity to error to reduce log clutter
+        # logging.set_verbosity_error()
 
         # Load the model with the specified device
         self.model = BertAdapterModel.from_pretrained("bert-base-uncased", num_labels=self.num_labels).to(self.device)
@@ -52,16 +53,16 @@ class BERTAdapter:
             X: Train set for a tokenized HuggingFace dataset
             y: A string indicating the target label name in the train dataset (e.g, 'Y').
             X_val: (Optional) Validation set for a tokenized HuggingFace dataset.
-            y_val: A string indicating the target label name in the validation dataset (e.g, 'Y').
+            y_val: (Optional) A string indicating the target label name in the validation dataset (e.g, 'Y').
          
         Returns:
             None
         """
-        subset_train = self._prepare_dataset(X, self.label)
+        subset_train = self._prepare_dataset(dataset=X, label=y)
         
         # Check for validation data & setup training arguments
         if X_val is not None:
-            subset_eval = self._prepare_dataset(X_val, self.label)
+            subset_eval = self._prepare_dataset(dataset=X_val, label=y_val)
             training_args = self._setup_training_args(is_validation=True)
         else:
             training_args = self._setup_training_args()
@@ -72,9 +73,21 @@ class BERTAdapter:
         self.model.train_adapter(self.category)
         self.model.set_active_adapters(self.category)
 
-        # Initialize the trainer
-        trainer = AdapterTrainer(model=self.model, args=training_args, train_dataset=subset_train, eval_dataset=subset_eval)
+        # Define compute metrics for computing evaluation accuracy
+        def compute_metrics(eval_pred):
+            metric = load_metric('accuracy')
+            predictions, labels = eval_pred
+            predictions = np.argmax(predictions, axis=1)
+            return metric.compute(predictions=predictions, references=labels)
+        
+        # Initialize trainer
+        trainer = AdapterTrainer(model=self.model, 
+                        args=training_args, 
+                        train_dataset=subset_train, 
+                        eval_dataset=subset_eval,
+                        compute_metrics=compute_metrics)
         trainer.train()
+
     
     def predict(self, X):
         """
@@ -117,26 +130,24 @@ class BERTAdapter:
         return np.concatenate((difference, predictions), axis=1)
     
     
-    def _prepare_dataset(self, indices, label=None):
+    def _prepare_dataset(self, dataset, label=None):
         """
         Prepares a dataset for training or prediction.
 
         Args:
-            indices: Indices to select the examples from the dataset.
+            dataset: Tokenized 'datasets.arrow_dataset.Dataset' with 'input_ids' and 'attention_mask' present.
             label: (Optional) A string indicating the target label name in the dataset (e.g, 'Y').
 
         Returns:
             A torch-formatted dataset ready for training or prediction.
         """
-        subset = self.dataset.select(indices)
         columns_to_select = ["input_ids", "attention_mask"]
         if label is not None:
-            subset = subset.rename_column(label, "labels")
+            dataset = dataset.rename_column(label, "labels")
             columns_to_select.append("labels")
-        subset.reset_format()
-        subset.set_format(type="torch", columns=columns_to_select)
-        return subset
-
+        dataset.set_format(type="torch", columns=columns_to_select)
+        return dataset
+    
 
     def _setup_training_args(self, is_validation=False):
         """
@@ -145,6 +156,7 @@ class BERTAdapter:
         Returns:
             A TrainingArguments instance with the configured training parameters.
         """
+        
         training_args = TrainingArguments(
             output_dir="output_dir",
             overwrite_output_dir=True,
@@ -161,3 +173,4 @@ class BERTAdapter:
             training_args.evaluation_strategy="epoch"
 
         return training_args
+    
