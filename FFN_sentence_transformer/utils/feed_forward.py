@@ -197,7 +197,7 @@ class FeedForward:
 
         # Run the training loop
         trainloader = torch.utils.data.DataLoader(Data(
-            X, y), batch_size=self.batch_size, shuffle=True, num_workers=1, drop_last=False)
+            X, y), batch_size=self.batch_size, shuffle=True, num_workers=0, drop_last=False)
         for epoch in range(self.num_epochs):
 
             # Set current loss value
