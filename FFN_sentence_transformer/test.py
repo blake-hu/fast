@@ -57,7 +57,7 @@ param_grid = {
     'learning_rate': [1e-2, 1e-3, 1e-4, 1e-5],
     'category': ['C'],
     'norm': [False],
-    'size': [768],
+    'size': [192],
     'num_layers': [1, 3, 5, 10],
     'weight_decay': [1e-2, 1e-3, 1e-4, 1e-5],
     'patience': [3],
