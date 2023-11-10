@@ -4,10 +4,12 @@ import torch.nn as nn
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
+
 class EarlyStopper:
     """
     A utility class that stops training when a monitored metric stops improving.
     """
+
     def __init__(self, patience, min_delta):
         """
         Initializes EarlyStopped class
@@ -27,7 +29,7 @@ class EarlyStopper:
 
         Args:
             validation_loss: the loss obtained after a validation epoch.
-        
+
         Returns:
             True if training should be stopped, otherwise False.
         """
@@ -45,6 +47,7 @@ class Data(torch.utils.data.Dataset):
     """
     Dataset class that wraps the input and target tensors for the dataset.
     """
+
     def __init__(self, X, y):
         """
         X: features data
@@ -65,12 +68,13 @@ class Data(torch.utils.data.Dataset):
         Retrieves the ith sample from the dataset.
         """
         return self.X[i], self.y[i]
-    
+
 
 class MLP(nn.Module):
     """
     A Multilayer Perceptron (MLP) neural network architecture for classification or regression.
     """
+
     def __init__(self, category, norm, size, num_layers):
         """
         Initializes a multilayer perceptron
@@ -100,10 +104,10 @@ class MLP(nn.Module):
     def forward(self, x):
         """
         Forward pass through the network.
-        
+
         Args:
             x: input tensor.
-        
+
         Returns:
             network output (torch array)
         """
@@ -114,10 +118,12 @@ class MLP(nn.Module):
         elif self.category == "R":
             return y_pred
 
+
 class FeedForward:
     """
     A class that encapsulates the training and prediction for a feedforward neural network.
     """
+
     def __init__(
         self,
         num_epochs,
@@ -154,38 +160,44 @@ class FeedForward:
         self.min_delta = min_delta
 
         # Ensure device is set correctly depending on cuda availability
-        self.device = torch.device(device if torch.cuda.is_available() else "cpu")
-        
+        self.device = torch.device(
+            device if torch.cuda.is_available() else "cpu")
+
         # Initialize the MLP model with the specified parameters
-        self.model = MLP(category=category, norm=norm, size=size, num_layers=num_layers).to(self.device)
-        
+        self.model = MLP(category=category, norm=norm, size=size,
+                         num_layers=num_layers).to(self.device)
+
         # Choose the appropriate loss function based on the problem category
         if category == "C":
             self.loss_function = nn.BCELoss()
         elif category == "R":
             self.loss_function = nn.MSELoss()
-        
+
         # Initialize the optimizer
-        self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+        self.optimizer = torch.optim.AdamW(
+            self.model.parameters(), lr=learning_rate, weight_decay=weight_decay)
 
     def fit(self, X, y, X_val=None, y_val=None):
         """
         Trains the model using the provided dataset.
-        
+
         Args:
             X: feature matrix for training.
             y: target vector for training.
             X_val: feature matrix for validation (optional).
             y_val: target vector for validation (optional).
-        
+
         Returns:
             tuple of the lowest validation loss and the best epoch number if validation is provided, otherwise None
         """
         # Define early stopper if validation data is provided
         if X_val is not None:
-            self.stopper = EarlyStopper(patience=self.patience, min_delta=self.min_delta)
+            self.stopper = EarlyStopper(
+                patience=self.patience, min_delta=self.min_delta)
 
         # Run the training loop
+        trainloader = torch.utils.data.DataLoader(Data(
+            X, y), batch_size=self.batch_size, shuffle=True, num_workers=0, drop_last=False)
         for epoch in range(self.num_epochs):
 
             # Set current loss value
@@ -193,7 +205,6 @@ class FeedForward:
 
             # Iterate over the DataLoader for training data
             self.model.train()
-            trainloader = torch.utils.data.DataLoader(Data(X, y), batch_size=self.batch_size, shuffle=True, num_workers=1, drop_last=False)
             for _, data in enumerate(trainloader, 0):
 
                 # Get and prepare inputs
@@ -206,7 +217,7 @@ class FeedForward:
 
                 # Perform forward pass
                 outputs = self.model(inputs)
-                
+
                 # Compute loss
                 loss = self.loss_function(outputs, targets).to(self.device)
 
@@ -217,7 +228,7 @@ class FeedForward:
                 self.optimizer.step()
                 current_loss += loss.item()
             # print(f"Epoch : {epoch+1}/{self.num_epochs} | Training Loss : {current_loss}")
-            
+
             # Validation phase
             if X_val is not None and y_val is not None:
                 validation_loss, validation_acc = self._validate(X_val, y_val)
@@ -244,14 +255,17 @@ class FeedForward:
         """
         self.model.eval()
         inputs_val = torch.from_numpy(X_val).float().to(self.device)
-        targets_val = torch.from_numpy(y_val).float().to(self.device).reshape((-1, 1))
-        
+        targets_val = torch.from_numpy(y_val).float().to(
+            self.device).reshape((-1, 1))
+
         with torch.no_grad():
             outputs_val = self.model(inputs_val)
-            validation_loss = self.loss_function(outputs_val, targets_val).item()
-            
+            validation_loss = self.loss_function(
+                outputs_val, targets_val).item()
+
         if self.category == "C":
-            validation_acc = accuracy_score(y_val, (outputs_val >= 0.5).to(int).cpu())
+            validation_acc = accuracy_score(
+                y_val, (outputs_val >= 0.5).to(int).cpu())
             return validation_loss, validation_acc
         elif self.category == "R":
             return validation_loss, None
@@ -292,7 +306,8 @@ class FeedForward:
             numpy array of predicted class probabilities.
         """
         if self.category != "C":
-            raise ValueError("predict_proba is only applicable to classification problems ('C').")
+            raise ValueError(
+                "predict_proba is only applicable to classification problems ('C').")
         predictions = self.predict(X)
         difference = np.ones(predictions.shape) - predictions
         return np.concatenate((difference, predictions), axis=1)
