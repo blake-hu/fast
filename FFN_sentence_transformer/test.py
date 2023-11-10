@@ -7,9 +7,10 @@ from sklearn.metrics import accuracy_score
 
 from sentence_transformers import SentenceTransformer
 from datasets import Dataset, load_dataset
-from transformers import BertTokenizer
+# from transformers import BertTokenizer
+from transformers import AutoTokenizer, AutoModel
 import torch
-from utils.adapter import BERTAdapter
+# from utils.adapter import BERTAdapter
 from utils.feed_forward import FeedForward
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -57,7 +58,7 @@ param_grid = {
     'learning_rate': [1e-2, 1e-3, 1e-4, 1e-5],
     'category': ['C'],
     'norm': [False],
-    'size': [768],
+    'size': [192],
     'num_layers': [1, 3, 5, 10],
     'weight_decay': [1e-2, 1e-3, 1e-4, 1e-5],
     'patience': [3],
@@ -89,3 +90,39 @@ for params in all_params:
 # Print the best parameters
 print("Best Parameters:", best_params)
 print("Highest Validation Accuracy:", highest_val_accuracy)
+
+# CLS Extraction
+tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-mpnet-base-v2')
+model = AutoModel.from_pretrained('sentence-transformers/all-mpnet-base-v2')
+
+# Define a function to extract CLS embeddings from input text
+def extract_cls_embeddings(text_array):
+    '''
+    Get CLS embeddings for each text item in the array.
+    Args:
+    - text_array (list): List of input text.
+    Returns:
+    - NumPy array (len(text_array), 768): CLS embeddings (768,) for each text.
+    '''
+    # Tokenize sentences
+    encoded_input = tokenizer(text_array, padding=True, truncation=True, return_tensors='pt')
+
+    # Compute token embeddings
+    with torch.no_grad():
+        model_output = model(**encoded_input) 
+    # Model_output is a dictionary with 'last_hidden_state' key that stores final hidden states (all token embeddings)
+    last_hidden_state = model_output['last_hidden_state'] # Same as model_output[0]
+   
+    # Extract the CLS embedding (index 0) from the last hidden state (3D tensor)
+    cls_embedding = last_hidden_state[:, 0, :]
+    # keep all data in batch, keep all hidden state features, but select first element from hidden states (hidden state corresponding to [CLS] token)
+
+    # Convert to numpy array
+    cls_embedding = cls_embedding.numpy()
+
+    return cls_embedding
+
+# Example
+examples = ["sentjnmnsd.", "!!kskfjka@"]
+cls_embeddings_array = extract_cls_embeddings(examples)
+print(cls_embeddings_array)
