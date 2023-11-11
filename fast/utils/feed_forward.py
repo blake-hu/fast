@@ -1,8 +1,7 @@
 import numpy as np
 import torch
 import torch.nn as nn
-from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef
 
 
 class EarlyStopper:
@@ -75,7 +74,7 @@ class MLP(nn.Module):
     A Multilayer Perceptron (MLP) neural network architecture for classification or regression.
     """
 
-    def __init__(self, category, norm, size, num_layers):
+    def __init__(self, category, norm, input_size, layer_size, num_layers):
         """
         Initializes a multilayer perceptron
 
@@ -89,17 +88,26 @@ class MLP(nn.Module):
         modules = []
 
         if norm:
-            for _ in range(num_layers):
-                modules.append(nn.Linear(size, size))
-                modules.append(nn.BatchNorm1d(size))
-                modules.append(nn.ReLU())
-        else:
-            for _ in range(num_layers):
-                modules.append(nn.Linear(size, size))
-                modules.append(nn.ReLU())
+            for i in range(num_layers):
+                if i == 0:  # for first layer
+                    modules.append(nn.Linear(input_size, layer_size))
+                    modules.append(nn.BatchNorm1d(layer_size))
+                    modules.append(nn.ReLU())
+                else:
+                    modules.append(nn.Linear(layer_size, layer_size))
+                    modules.append(nn.BatchNorm1d(layer_size))
+                    modules.append(nn.ReLU())
+        else:  # no normalization
+            for i in range(num_layers):
+                if i == 0:  # for first layer
+                    modules.append(nn.Linear(input_size, layer_size))
+                    modules.append(nn.ReLU())
+                else:
+                    modules.append(nn.Linear(layer_size, layer_size))
+                    modules.append(nn.ReLU())
 
         self.linear_relu = nn.Sequential(*modules)
-        self.linear = nn.Linear(size, 1)
+        self.linear = nn.Linear(layer_size, 1)
 
     def forward(self, x):
         """
@@ -131,12 +139,13 @@ class FeedForward:
         learning_rate,
         category,
         norm,
-        size,
+        input_size,
+        layer_size,
         num_layers,
         weight_decay,
         patience,
         min_delta,
-        device='cpu'
+        device
     ):
         """
         Initializes the FeedForward object with the given configurations.
@@ -164,7 +173,10 @@ class FeedForward:
             device if torch.cuda.is_available() else "cpu")
 
         # Initialize the MLP model with the specified parameters
-        self.model = MLP(category=category, norm=norm, size=size,
+        self.model = MLP(category=category,
+                         norm=norm,
+                         input_size=input_size,
+                         layer_size=layer_size,
                          num_layers=num_layers).to(self.device)
 
         # Choose the appropriate loss function based on the problem category
@@ -172,6 +184,9 @@ class FeedForward:
             self.loss_function = nn.BCELoss()
         elif category == "R":
             self.loss_function = nn.MSELoss()
+        else:
+            raise ValueError(
+                "category must be either 'C' for classification or 'R' for regression.")
 
         # Initialize the optimizer
         self.optimizer = torch.optim.AdamW(
@@ -231,7 +246,8 @@ class FeedForward:
 
             # Validation phase
             if X_val is not None and y_val is not None:
-                validation_loss, validation_acc = self._validate(X_val, y_val)
+                validation_loss, validation_accuracy, validation_f1, validation_mcc = self._validate(
+                    X_val, y_val)
                 # print(f"Validation Loss : {validation_loss} | Validation Accuracy : {validation_acc}")
                 if self.stopper.early_stop(validation_loss):
                     # print(f"Early stopping triggered at epoch {epoch+1}.")
@@ -239,7 +255,7 @@ class FeedForward:
 
         # print(f'Training process has finished.')
         if X_val is not None and y_val is not None:
-            return (epoch+1, validation_loss, validation_acc)
+            return (epoch + 1, validation_loss, validation_accuracy, validation_f1, validation_mcc)
 
     def _validate(self, X_val, y_val):
         """
@@ -264,9 +280,14 @@ class FeedForward:
                 outputs_val, targets_val).item()
 
         if self.category == "C":
-            validation_acc = accuracy_score(
+            validation_accuracy = accuracy_score(
                 y_val, (outputs_val >= 0.5).to(int).cpu())
-            return validation_loss, validation_acc
+            validation_f1 = f1_score(
+                y_val, (outputs_val >= 0.5).to(int).cpu())
+            validation_mcc = matthews_corrcoef(
+                y_val, (outputs_val >= 0.5).to(int).cpu())
+            return validation_loss, validation_accuracy, validation_f1, validation_mcc
+
         elif self.category == "R":
             return validation_loss, None
 
