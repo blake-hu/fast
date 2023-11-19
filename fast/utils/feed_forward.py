@@ -169,8 +169,7 @@ class FeedForward:
         self.min_delta = min_delta
 
         # Ensure device is set correctly depending on cuda availability
-        self.device = torch.device(
-            device if torch.cuda.is_available() else "cpu")
+        self.device = torch.device(device)
 
         # Initialize the MLP model with the specified parameters
         self.model = MLP(category=category,
@@ -236,10 +235,10 @@ class FeedForward:
                 # Compute loss
                 loss = self.loss_function(outputs, targets).to(self.device)
 
-                # Perform backward pass
+                # Backpropagation to calculate gradients using chain rule
                 loss.backward()
 
-                # Perform optimization
+                # Perform optimization: Adjust each parameter by small step amount in direction of gradient
                 self.optimizer.step()
                 current_loss += loss.item()
             # print(f"Epoch : {epoch+1}/{self.num_epochs} | Training Loss : {current_loss}")
