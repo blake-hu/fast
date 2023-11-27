@@ -79,7 +79,7 @@ class MLP(nn.Module):
         Initializes a multilayer perceptron
 
         Args:
-            category: determines the type of problem: "C" for classification, "R" for regression.
+            category: determines the type of problem: "BC" for classification, "R" for regression.
             norm: if True, batch normalization will be applied.
             size: size of the input and hidden layer.
         """
@@ -120,11 +120,8 @@ class MLP(nn.Module):
             network output (torch array)
         """
         out = self.linear_relu(x)
-        y_pred = self.linear(out)
-        if self.category == "C":
-            return torch.sigmoid(y_pred)
-        elif self.category == "R":
-            return y_pred
+        y_logits = self.linear(out)
+        return y_logits
 
 
 class FeedForward:
@@ -154,7 +151,7 @@ class FeedForward:
             num_epochs: number of epochs to train.
             batch_size: size of the batch used in training.
             learning_rate: learning rate for the optimizer.
-            category: type of problem ("C" for classification, "R" for regression).
+            category: type of problem ("BC" for binary classification, "R" for regression).
             norm: whether to use batch normalization.
             size: size of the input layer and the hidden layers.
             num_layers: number of ReLU hidden layers.
@@ -179,13 +176,15 @@ class FeedForward:
                          num_layers=num_layers).to(self.device)
 
         # Choose the appropriate loss function based on the problem category
-        if category == "C":
-            self.loss_function = nn.BCELoss()
+        if category == "BC":
+            self.loss_function = nn.BCEWithLogitsLoss()
+        elif category == "MC":
+            self.loss_function = nn.CrossEntropyLoss()
         elif category == "R":
             self.loss_function = nn.MSELoss()
         else:
             raise ValueError(
-                "category must be either 'C' for classification or 'R' for regression.")
+                "category must be either 'MC' for multi-class classification, 'BC' for binary classification or 'R' for regression.")
 
         # Initialize the optimizer
         self.optimizer = torch.optim.AdamW(
@@ -215,7 +214,7 @@ class FeedForward:
         for epoch in range(self.num_epochs):
 
             # Set current loss value
-            current_loss = 0.0
+            current_loss = []
 
             # Iterate over the DataLoader for training data
             self.model.train()
@@ -240,23 +239,25 @@ class FeedForward:
 
                 # Perform optimization: Adjust each parameter by small step amount in direction of gradient
                 self.optimizer.step()
-                current_loss += loss.item()
-            # print(f"Epoch : {epoch+1}/{self.num_epochs} | Training Loss : {current_loss}")
+                current_loss.append(loss.item())
+
+            average_loss = sum(current_loss) / len(current_loss)
 
             # Validation phase
             if X_val is not None and y_val is not None:
-                validation_loss, validation_accuracy, validation_f1, validation_mcc = self._validate(
-                    X_val, y_val)
-                # print(f"Validation Loss : {validation_loss} | Validation Accuracy : {validation_acc}")
+                validation_loss, validation_accuracy, validation_f1, validation_mcc = self._validate(X_val, y_val)
+                # print(f"Epoch {epoch+1}/{self.num_epochs} | Training Loss : {average_loss} | Validation Loss : {validation_loss}")
                 if self.stopper.early_stop(validation_loss):
-                    # print(f"Early stopping triggered at epoch {epoch+1}.")
                     break
+            else:
+                # print(f"Epoch {epoch+1}/{self.num_epochs} | Training Loss : {average_loss}")
+                pass
 
         # print(f'Training process has finished.')
         if X_val is not None and y_val is not None:
             return (epoch + 1, validation_loss, validation_accuracy, validation_f1, validation_mcc)
 
-    def _validate(self, X_val, y_val):
+    def _validate(self, X, y_true):
         """
         Validates the model on a provided validation set.
 
@@ -269,8 +270,8 @@ class FeedForward:
             validation loss (for regression)
         """
         self.model.eval()
-        inputs_val = torch.from_numpy(X_val).float().to(self.device)
-        targets_val = torch.from_numpy(y_val).float().to(
+        inputs_val = torch.from_numpy(X).float().to(self.device)
+        targets_val = torch.from_numpy(y_true).float().to(
             self.device).reshape((-1, 1))
 
         with torch.no_grad():
@@ -278,15 +279,20 @@ class FeedForward:
             validation_loss = self.loss_function(
                 outputs_val, targets_val).item()
 
-        if self.category == "C":
-            validation_accuracy = accuracy_score(
-                y_val, (outputs_val >= 0.5).to(int).cpu())
-            validation_f1 = f1_score(
-                y_val, (outputs_val >= 0.5).to(int).cpu())
-            validation_mcc = matthews_corrcoef(
-                y_val, (outputs_val >= 0.5).to(int).cpu())
+        if self.category == "BC":
+            y_pred = (outputs_val >= 0.5).to(int).cpu()
+            validation_accuracy = accuracy_score(y_true, y_pred)
+            validation_f1 = f1_score(y_true, y_pred, average="micro")
+            validation_mcc = matthews_corrcoef(y_true, y_pred)
             return validation_loss, validation_accuracy, validation_f1, validation_mcc
-
+        elif self.category == "MC":
+            y_true = np.argmax(y_true, axis=1)
+            y_pred = np.argmax(self.output_activation(
+                outputs_val.cpu()), axis=1)
+            validation_accuracy = accuracy_score(y_true, y_pred)
+            validation_f1 = f1_score(y_true, y_pred, average="micro")
+            validation_mcc = matthews_corrcoef(y_true, y_pred)
+            return validation_loss, validation_accuracy, validation_f1, validation_mcc
         elif self.category == "R":
             return validation_loss, None
 
@@ -325,9 +331,9 @@ class FeedForward:
         Returns:
             numpy array of predicted class probabilities.
         """
-        if self.category != "C":
+        if self.category != "BC":
             raise ValueError(
-                "predict_proba is only applicable to classification problems ('C').")
+                "predict_proba is only applicable to classification problems ('BC').")
         predictions = self.predict(X)
         difference = np.ones(predictions.shape) - predictions
         return np.concatenate((difference, predictions), axis=1)
