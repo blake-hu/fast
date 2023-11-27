@@ -27,6 +27,6 @@ def mean_pooling(model_output, attention_mask):
     mean_embeddings = F.normalize(mean_embeddings, p=2, dim=1)
 
     # Convert to numpy array
-    mean_embeddings = mean_embeddings.numpy()
+    mean_embeddings = mean_embeddings.cpu().numpy()
     
     return mean_embeddings 
