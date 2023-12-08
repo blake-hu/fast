@@ -2,6 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef
+from scipy.stats import pearsonr, spearmanr
 
 
 class EarlyStopper:
@@ -245,17 +246,20 @@ class FeedForward:
 
             # Validation phase
             if X_val is not None and y_val is not None:
-                validation_loss, validation_accuracy, validation_f1, validation_mcc = self._validate(X_val, y_val)
-                # print(f"Epoch {epoch+1}/{self.num_epochs} | Training Loss : {average_loss} | Validation Loss : {validation_loss}")
-                if self.stopper.early_stop(validation_loss):
+                metrics = self._validate(X_val, y_val)
+                metrics["epoch"] = epoch + 1
+                # print(
+                #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss} | Validation Loss : {metrics['loss']} | Pearson: {metrics['pearson']}")
+                if self.stopper.early_stop(metrics["loss"]):
                     break
             else:
-                # print(f"Epoch {epoch+1}/{self.num_epochs} | Training Loss : {average_loss}")
+                # print(
+                #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss}")
                 pass
 
         # print(f'Training process has finished.')
         if X_val is not None and y_val is not None:
-            return (epoch + 1, validation_loss, validation_accuracy, validation_f1, validation_mcc)
+            return metrics
 
     def _validate(self, X, y_true):
         """
@@ -281,20 +285,29 @@ class FeedForward:
 
         if self.category == "BC":
             y_pred = (outputs_val >= 0.5).to(int).cpu()
-            validation_accuracy = accuracy_score(y_true, y_pred)
-            validation_f1 = f1_score(y_true, y_pred, average="micro")
-            validation_mcc = matthews_corrcoef(y_true, y_pred)
-            return validation_loss, validation_accuracy, validation_f1, validation_mcc
+            return {
+                "loss": validation_loss,
+                "acc": accuracy_score(y_true, y_pred),
+                "f1": f1_score(y_true, y_pred, average="micro"),
+                "mcc": matthews_corrcoef(y_true, y_pred)
+            }
         elif self.category == "MC":
             y_true = np.argmax(y_true, axis=1)
             y_pred = np.argmax(self.output_activation(
                 outputs_val.cpu()), axis=1)
-            validation_accuracy = accuracy_score(y_true, y_pred)
-            validation_f1 = f1_score(y_true, y_pred, average="micro")
-            validation_mcc = matthews_corrcoef(y_true, y_pred)
-            return validation_loss, validation_accuracy, validation_f1, validation_mcc
+            return {
+                "loss": validation_loss,
+                "acc": accuracy_score(y_true, y_pred),
+                "f1": f1_score(y_true, y_pred, average="micro"),
+                "mcc": matthews_corrcoef(y_true, y_pred)
+            }
         elif self.category == "R":
-            return validation_loss, None
+            outputs_val = outputs_val.squeeze().cpu().numpy()
+            return {
+                "loss": validation_loss,
+                "pearson": pearsonr(y_true, outputs_val).statistic,
+                "spearman": spearmanr(y_true, outputs_val).statistic,
+            }
 
     def predict(self, X):
         """
