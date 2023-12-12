@@ -9,7 +9,7 @@ def mean_pooling(model_output, attention_mask):
     - model_output (dictionary): Outputs of model, containing last_hidden_state, pooler_output, hidden_states, attentions.
     - attention_mask (tensor): Mask that indicates which tokens are actual tokens from the input (1s) and which ones are padding tokens (0s).
     Returns:
-    - NumPy array (len(text_array), 768): mean-pooled embeddings (768,) for each text.
+    - PyTorch tensor (len(text_array), 768): mean-pooled embeddings (768,) for each text.
     '''
     # Extract token embeddings from the model_output -- first element contains embeddings for each token in the input sequence.
     token_embeddings = model_output[0]
@@ -25,8 +25,5 @@ def mean_pooling(model_output, attention_mask):
     
     # Normalize
     mean_embeddings = F.normalize(mean_embeddings, p=2, dim=1)
-
-    # Convert to numpy array
-    mean_embeddings = mean_embeddings.cpu().numpy()
     
     return mean_embeddings 
