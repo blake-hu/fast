@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef
 from scipy.stats import pearsonr, spearmanr
-
+import time
 
 class EarlyStopper:
     """
@@ -191,6 +191,10 @@ class FeedForward:
         self.optimizer = torch.optim.AdamW(
             self.model.parameters(), lr=learning_rate, weight_decay=weight_decay)
 
+        # Benchmarking: track training time and power usage per epoch
+        self.train_times_per_epoch = []
+        self.energy_per_epoch = []
+
     def fit(self, X, y, X_val=None, y_val=None):
         """
         Trains the model using the provided dataset.
@@ -213,6 +217,7 @@ class FeedForward:
         trainloader = torch.utils.data.DataLoader(Data(
             X, y), batch_size=self.batch_size, shuffle=True, num_workers=0, drop_last=False)
         for epoch in range(self.num_epochs):
+            epoch_start_time = time.time()  # Start time for this epoch
 
             # Set current loss value
             current_loss = []
@@ -242,24 +247,30 @@ class FeedForward:
                 self.optimizer.step()
                 current_loss.append(loss.item())
 
-            average_loss = sum(current_loss) / len(current_loss)
+            # average_loss = sum(current_loss) / len(current_loss)
 
             # Validation phase
             if X_val is not None and y_val is not None:
                 metrics = self._validate(X_val, y_val)
                 metrics["epoch"] = epoch + 1
+
+                epoch_train_time = time.time() - epoch_start_time
+                self.train_times_per_epoch.append(epoch_train_time)
+                self.energy_per_epoch.append(self.get_energy_per_epoch(epoch_train_time))
                 # print(
                 #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss} | Validation Loss : {metrics['loss']} | Pearson: {metrics['pearson']}")
                 if self.stopper.early_stop(metrics["loss"]):
                     break
             else:
+                epoch_train_time = time.time() - epoch_start_time
+                self.train_times_per_epoch.append(epoch_train_time)
+                self.energy_per_epoch.append(self.get_energy_per_epoch(epoch_train_time))
                 # print(
                 #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss}")
-                pass
-
+            
         # print(f'Training process has finished.')
         if X_val is not None and y_val is not None:
-            return metrics
+            return metrics, self.train_times_per_epoch, self.energy_per_epoch
 
     def _validate(self, X, y_true):
         """
@@ -350,3 +361,51 @@ class FeedForward:
         predictions = self.predict(X)
         difference = np.ones(predictions.shape) - predictions
         return np.concatenate((difference, predictions), axis=1)
+
+    def get_energy_per_epoch(self, epoch_train_time):
+        """
+        Finds energy usage of the given epoch
+        Estimates power output of hardware (watts) and computes E = P * delta t
+        Returns energy in joules
+        """
+        try:
+            # Try to get power output info from hardware
+            if self.device == torch.device("mps"): # Apple GPU
+                import subprocess
+                import re
+
+                def get_power(output, pattern):
+                    match = pattern.search(output)
+                    if match:
+                        return float(match.group(1)) / 1000  # Power value, convert mW to W 
+                    else:
+                        return 0.0
+            
+                output = subprocess.check_output(["sudo", "powermetrics", "-n", "1", "-i", "1000", "--samplers", "all"], universal_newlines=True, 
+                                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) # Suppress output
+                gpu_power = get_power(output, re.compile(r"GPU Power: (\d+) mW")) 
+                ane_power = get_power(output, re.compile(r"ANE Power: (\d+) mW"))
+                power = gpu_power + ane_power
+
+            elif self.device == torch.device("gpu"): # NVIDIA GPU
+                import pynvml # incl in python 3.9
+
+                pynvml.nvmlInit()
+                device_count = pynvml.nvmlDeviceGetCount()
+                if device_count > 0:
+                    handle = pynvml.nvmlDeviceGetHandleByIndex(0)  # Index 0 represents the first GPU
+                    power = pynvml.nvmlDeviceGetPowerUsage(handle)  # Power usage in milliwatts
+                    power = power / 1000 # convert mW to W
+            
+            elif self.device == torch.device("cpu"): # Intel CPU
+                # Read energy_uj file
+                with open('/sys/class/powercap/intel-rapl/intel-rapl:0/energy_uj', 'r') as file:
+                    energy_microjoules = int(file.read().strip())
+                    return energy_microjoules / 1_000_000 # convert to joules
+                    
+        except:
+            # If we can't get power from the hardware, do a manual estimate
+            power = 75.0
+
+        return power * epoch_train_time
+
