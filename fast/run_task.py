@@ -309,8 +309,9 @@ if __name__ == "__main__":
         # Initialize the model with current set of hyperparameters
         feed_forward = FeedForward(**params)
 
-        epoch, val_loss, val_accuracy, val_f1, val_mcc = feed_forward.fit(X_train, Y_train, X_val, Y_val)
+        metrics = feed_forward.fit(X_train, Y_train, X_val, Y_val)
 
+        epoch, val_loss, val_accuracy, val_f1, val_mcc = metrics["epoch"], metrics["loss"], metrics["acc"], metrics["f1"], metrics["mcc"]
         best_acc = max(best_acc, val_accuracy)
         bar.set_description(f"Best Acc: {best_acc:.5f}, Last test: {val_accuracy:.5f}")
 
