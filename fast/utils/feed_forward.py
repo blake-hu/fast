@@ -4,6 +4,8 @@ import torch.nn as nn
 from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef
 from scipy.stats import pearsonr, spearmanr
 import time
+from tqdm.notebook import tqdm
+
 
 class EarlyStopper:
     """
@@ -75,7 +77,7 @@ class MLP(nn.Module):
     A Multilayer Perceptron (MLP) neural network architecture for classification or regression.
     """
 
-    def __init__(self, category, norm, input_size, layer_size, num_layers):
+    def __init__(self, category, norm, input_size, layer_size, num_layers, num_classes):
         """
         Initializes a multilayer perceptron
 
@@ -108,7 +110,7 @@ class MLP(nn.Module):
                     modules.append(nn.ReLU())
 
         self.linear_relu = nn.Sequential(*modules)
-        self.linear = nn.Linear(layer_size, 1)
+        self.linear = nn.Linear(layer_size, num_classes)
 
     def forward(self, x):
         """
@@ -139,6 +141,7 @@ class FeedForward:
         norm,
         input_size,
         layer_size,
+        num_classes,
         num_layers,
         weight_decay,
         patience,
@@ -165,6 +168,7 @@ class FeedForward:
         self.category = category
         self.patience = patience
         self.min_delta = min_delta
+        self.num_classes = num_classes
 
         # Ensure device is set correctly depending on cuda availability
         self.device = torch.device(device)
@@ -174,7 +178,8 @@ class FeedForward:
                          norm=norm,
                          input_size=input_size,
                          layer_size=layer_size,
-                         num_layers=num_layers).to(self.device)
+                         num_layers=num_layers,
+                         num_classes=num_classes).to(self.device)
 
         # Choose the appropriate loss function based on the problem category
         if category == "BC":
@@ -224,12 +229,13 @@ class FeedForward:
 
             # Iterate over the DataLoader for training data
             self.model.train()
-            for _, data in enumerate(trainloader, 0):
+            for _, data in tqdm(enumerate(trainloader, 0):)
 
                 # Get and prepare inputs
                 inputs, targets = data
                 inputs, targets = inputs.float().to(self.device), targets.float().to(self.device)
-                targets = targets.reshape((targets.shape[0], 1))
+
+                targets = targets.reshape((targets.shape[0], self.num_classes))
 
                 # Zero the gradients
                 self.optimizer.zero_grad()
@@ -256,7 +262,8 @@ class FeedForward:
 
                 epoch_train_time = time.time() - epoch_start_time
                 self.train_times_per_epoch.append(epoch_train_time)
-                self.energy_per_epoch.append(self.get_energy_per_epoch(epoch_train_time))
+                self.energy_per_epoch.append(
+                    self.get_energy_per_epoch(epoch_train_time))
                 # print(
                 #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss} | Validation Loss : {metrics['loss']} | Pearson: {metrics['pearson']}")
                 if self.stopper.early_stop(metrics["loss"]):
@@ -264,10 +271,11 @@ class FeedForward:
             else:
                 epoch_train_time = time.time() - epoch_start_time
                 self.train_times_per_epoch.append(epoch_train_time)
-                self.energy_per_epoch.append(self.get_energy_per_epoch(epoch_train_time))
+                self.energy_per_epoch.append(
+                    self.get_energy_per_epoch(epoch_train_time))
                 # print(
                 #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss}")
-            
+
         # print(f'Training process has finished.')
         if X_val is not None and y_val is not None:
             return metrics, self.train_times_per_epoch, self.energy_per_epoch
@@ -287,7 +295,7 @@ class FeedForward:
         self.model.eval()
         inputs_val = torch.from_numpy(X).float().to(self.device)
         targets_val = torch.from_numpy(y_true).float().to(
-            self.device).reshape((-1, 1))
+            self.device).reshape((-1, self.num_classes))
 
         with torch.no_grad():
             outputs_val = self.model(inputs_val)
@@ -303,8 +311,9 @@ class FeedForward:
                 "mcc": matthews_corrcoef(y_true, y_pred)
             }
         elif self.category == "MC":
+            softmax = nn.Softmax(dim=1)
             y_true = np.argmax(y_true, axis=1)
-            y_pred = np.argmax(self.output_activation(
+            y_pred = np.argmax(softmax(
                 outputs_val.cpu()), axis=1)
             return {
                 "loss": validation_loss,
@@ -370,42 +379,46 @@ class FeedForward:
         """
         try:
             # Try to get power output info from hardware
-            if self.device == torch.device("mps"): # Apple GPU
+            if self.device == torch.device("mps"):  # Apple GPU
                 import subprocess
                 import re
 
                 def get_power(output, pattern):
                     match = pattern.search(output)
                     if match:
-                        return float(match.group(1)) / 1000  # Power value, convert mW to W 
+                        # Power value, convert mW to W
+                        return float(match.group(1)) / 1000
                     else:
                         return 0.0
-            
-                output = subprocess.check_output(["sudo", "powermetrics", "-n", "1", "-i", "1000", "--samplers", "all"], universal_newlines=True, 
-                                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) # Suppress output
-                gpu_power = get_power(output, re.compile(r"GPU Power: (\d+) mW")) 
-                ane_power = get_power(output, re.compile(r"ANE Power: (\d+) mW"))
+
+                output = subprocess.check_output(["sudo", "powermetrics", "-n", "1", "-i", "1000", "--samplers", "all"], universal_newlines=True,
+                                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)  # Suppress output
+                gpu_power = get_power(
+                    output, re.compile(r"GPU Power: (\d+) mW"))
+                ane_power = get_power(
+                    output, re.compile(r"ANE Power: (\d+) mW"))
                 power = gpu_power + ane_power
 
-            elif self.device == torch.device("gpu"): # NVIDIA GPU
-                import pynvml # incl in python 3.9
+            elif self.device == torch.device("gpu"):  # NVIDIA GPU
+                import pynvml  # incl in python 3.9
 
                 pynvml.nvmlInit()
                 device_count = pynvml.nvmlDeviceGetCount()
                 if device_count > 0:
-                    handle = pynvml.nvmlDeviceGetHandleByIndex(0)  # Index 0 represents the first GPU
-                    power = pynvml.nvmlDeviceGetPowerUsage(handle)  # Power usage in milliwatts
-                    power = power / 1000 # convert mW to W
-            
-            elif self.device == torch.device("cpu"): # Intel CPU
+                    handle = pynvml.nvmlDeviceGetHandleByIndex(
+                        0)  # Index 0 represents the first GPU
+                    power = pynvml.nvmlDeviceGetPowerUsage(
+                        handle)  # Power usage in milliwatts
+                    power = power / 1000  # convert mW to W
+
+            elif self.device == torch.device("cpu"):  # Intel CPU
                 # Read energy_uj file
                 with open('/sys/class/powercap/intel-rapl/intel-rapl:0/energy_uj', 'r') as file:
                     energy_microjoules = int(file.read().strip())
-                    return energy_microjoules / 1_000_000 # convert to joules
-                    
+                    return energy_microjoules / 1_000_000  # convert to joules
+
         except:
             # If we can't get power from the hardware, do a manual estimate
             power = 75.0
 
         return power * epoch_train_time
-
