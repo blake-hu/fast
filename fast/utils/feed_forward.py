@@ -229,7 +229,7 @@ class FeedForward:
 
             # Iterate over the DataLoader for training data
             self.model.train()
-            for _, data in tqdm(enumerate(trainloader, 0):)
+            for _, data in tqdm(enumerate(trainloader, 0)):
 
                 # Get and prepare inputs
                 inputs, targets = data
@@ -252,8 +252,6 @@ class FeedForward:
                 # Perform optimization: Adjust each parameter by small step amount in direction of gradient
                 self.optimizer.step()
                 current_loss.append(loss.item())
-
-            # average_loss = sum(current_loss) / len(current_loss)
 
             # Validation phase
             if X_val is not None and y_val is not None:

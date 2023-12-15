@@ -8,7 +8,7 @@ from collections import namedtuple
 from tqdm.notebook import tqdm
 
 import numpy as np
-import pandas as pd
+import time
 
 import torch
 from torch.utils.data import Dataset, DataLoader
@@ -185,6 +185,13 @@ def compute_pair_embeddings(loader):
 
     return np.concatenate(embeddings, axis=0)
 
+# recompute tensors for two sentence tasks
+def recompute_embedding(dataset):
+    U = dataset[:, :768]
+    V = dataset[:, 768:]
+    new = U - V
+    
+    return new
 
 if __name__ == "__main__":
 
@@ -194,12 +201,18 @@ if __name__ == "__main__":
     parser.add_argument('--task', required=True, help='GLUE task')
     parser.add_argument('--embedding', required=True, help='Embedding type')
     parser.add_argument('--device', required=False,
-                        help='Optional, can specific specific device for model to run')
-
+                        help='Optional, specifies device for model to run')
+    parser.add_argument('--recompute', required=False,
+                        help='Optional,  specifies whether to use u - v embedding')
+    
     args, unk = parser.parse_known_args()
     model_param = args.model
     task_param = args.task
     embedding_param = args.embedding
+    if args.recompute is not None:
+        recomputed = args.recompute
+    else:
+        recomputed = False
 
     device_name = "cpu"  # default device is CPU
     if torch.cuda.is_available():
@@ -283,6 +296,7 @@ if __name__ == "__main__":
         X_train = np.load(paths[0])
         X_val = np.load(paths[1])
         X_test = np.load(paths[2])
+        embedding_time = 0.0
     else:
         print("no saved embeddings found")
         if task_config.sentence_type == "one":
@@ -324,7 +338,10 @@ if __name__ == "__main__":
             val_dataset, batch_size=batch_size, shuffle=False)
         test_loader = DataLoader(
             test_dataset, batch_size=batch_size, shuffle=False)
-
+        
+        # Track time
+        start_time = time.time()
+        
         if task_config.sentence_type == "one":
             train_embed = compute_single_embeddings(train_loader)
             val_embed = compute_single_embeddings(val_loader)
@@ -337,6 +354,8 @@ if __name__ == "__main__":
         X_train = train_embed
         X_val = val_embed
         X_test = test_embed
+
+        embedding_time = time.time() - start_time
 
         # saving embeddings
         cache_path.mkdir(parents=True, exist_ok=True)
@@ -351,29 +370,41 @@ if __name__ == "__main__":
             np.save(X_val_file, X_val)
         with open(paths[2], 'wb') as X_test_file:
             np.save(X_test_file, X_test)
-
+    
     print(X_train.shape)
     print(X_val.shape)
     print(X_test.shape)
+    
+    input_size = task_config.input_size
+    if recomputed:
+        X_train_recomputed = recompute_embedding(X_train)
+        X_val_recomputed = recompute_embedding(X_val)
+        X_test_recomputed = recompute_embedding(X_test)
+
+        print(X_train_recomputed.shape)
+        print(X_val_recomputed.shape)
+        print(X_test_recomputed.shape)
+
+        input_size = task_config.input_size // 2
 
     param_grid = {
         'num_epochs': [50],
-        'batch_size': [32, 128, 512],
+        'batch_size': [32, 512],
         'learning_rate': [1e-2, 1e-3],
         'category': [task_config.class_type],
         'norm': [False],
-        'input_size': [task_config.input_size],
-        'layer_size': [task_config.input_size],
-        'num_layers': [1, 2, 3],
-        'weight_decay': [1e-2, 1e-3, 1e-4],
+        'input_size': [input_size],
+        'layer_size': [input_size // 2, input_size, input_size * 2],
+        'num_classes': [task_config.num_classes],
+        'num_layers': [1, 5, 10],
+        'weight_decay':[1e-2, 1e-4],
         'patience': [3],
         'min_delta': [0],
         'device': [device_name]
     }
 
     # Create a list of all combinations of hyperparameters
-    all_params = [dict(zip(param_grid.keys(), v))
-                  for v in itertools.product(*param_grid.values())]
+    all_params = [dict(zip(param_grid.keys(), v)) for v in itertools.product(*param_grid.values())]
     print(f"{len(all_params)} hyperparameter combinations")
 
     # Setup for logging
@@ -391,8 +422,7 @@ if __name__ == "__main__":
         with open(results_file, 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
             headers = list(all_params[0].keys())
-            writer.writerow(
-                ['mcc', 'f1', 'accuracy', 'training time', 'training energy'] + headers)
+            writer.writerow(['mcc', 'f1', 'accuracy', 'training time', 'embedding time', 'training energy', 'embedding energy'] + headers)
         print(f"saving results to ./{results_file}")
         # Saves best accuracy for progress bar display
         best_acc = 0.0
@@ -400,8 +430,7 @@ if __name__ == "__main__":
         with open(results_file, 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
             headers = list(all_params[0].keys())
-            writer.writerow(
-                ['pearson', 'spearman', 'training time', 'training energy'] + headers)
+            writer.writerow(['pearson', 'spearman', 'training time', 'embedding time', 'training energy', 'embedding energy'] + headers)
         print(f"saving results to ./{results_file}")
         # Saves best accuracy for progress bar display
         best_pearson = -2.0
@@ -417,20 +446,29 @@ if __name__ == "__main__":
         # Initialize the model with current set of hyperparameters
         feed_forward = FeedForward(**params)
 
-        metrics, train_times_per_epoch, energy_per_epoch = feed_forward.fit(
-            X_train, Y_train, X_val, Y_val)
-        training_time = np.mean(train_times_per_epoch)
-        training_energy = np.mean(energy_per_epoch)
+        if recomputed:
+            metrics, train_times_per_epoch, energy_per_epoch = feed_forward.fit(X_train_recomputed,
+                                                                                Y_train,
+                                                                                X_val_recomputed,
+                                                                                Y_val)
+        else:
+            metrics, train_times_per_epoch, energy_per_epoch = feed_forward.fit(X_train,
+                                                                                Y_train,
+                                                                                X_val,
+                                                                                Y_val)
+        
         # Log average training time per epoch for current parameter set
         # Note: FFN frequently stops early
+        training_time = np.mean(train_times_per_epoch)
+        training_energy = np.mean(energy_per_epoch) 
+        # Compute energy for embedding generation
+        embedding_energy = feed_forward.get_energy_per_epoch(embedding_time) # This method effectively just computes energy for a given time
 
         if task_config.class_type in ["BC", "MC"]:
-            epoch, val_loss, val_accuracy, val_f1, val_mcc = metrics["epoch"], metrics[
-                "loss"], metrics["acc"], metrics["f1"], metrics["mcc"]
+            epoch, val_loss, val_accuracy, val_f1, val_mcc = metrics["epoch"], metrics["loss"], metrics["acc"], metrics["f1"], metrics["mcc"]
             best_acc = max(best_acc, val_accuracy)
-            bar.set_description(
-                f"Best Acc: {best_acc:.5f}, Last test: {val_accuracy:.5f}")
-
+            bar.set_description(f"Best Acc: {best_acc:.5f}, Last test: {val_accuracy:.5f}")
+        
             # Write stats to log file
             with open(console_output_filename, 'a') as logfile:
                 logfile.write(f"\n\nTraining with parameters:\n{print_params}")
@@ -438,34 +476,32 @@ if __name__ == "__main__":
                 logfile.write(f"\nValidation accuracy: {val_accuracy}")
                 logfile.write(f"\nValidation f1-score: {val_f1}")
                 logfile.write(f"\nValidation MCC     : {val_mcc}")
-                logfile.write(f"\nTraining time      : {training_time}")
-                logfile.write(f"\nTraining energy    : {training_energy}")
+                logfile.write(f"\nTraining time      : {training_time}") 
+                logfile.write(f"\nEmbedding time      : {embedding_time}") 
+                logfile.write(f"\nTraining energy    : {training_energy}") 
+                logfile.write(f"\nEmbedding energy    : {embedding_energy}") 
             # Write to results csv
             with open(results_file, 'a', newline='') as csvfile:
                 writer = csv.writer(csvfile)
-                writer.writerow([val_mcc, val_f1, val_accuracy,
-                                training_time, training_energy] + list(params.values()))
-
+                writer.writerow([val_mcc, val_f1, val_accuracy, training_time, embedding_time, training_energy, embedding_energy] + list(params.values()))
+                    
         elif task_config.class_type == "R":  # just report loss for regression task
-            epoch, val_loss, val_pearson, val_spearman = metrics[
-                "epoch"], metrics["loss"], metrics["pearson"], metrics["spearman"]
+            epoch, val_loss, val_pearson, val_spearman = metrics["epoch"], metrics["loss"], metrics["pearson"], metrics["spearman"]
             best_pearson = max(best_pearson, val_pearson)
-            bar.set_description(
-                f"Best Pearson's corrcoef: {best_pearson:.3f}, Last test: {val_pearson:.3f}")
-
+            bar.set_description(f"Best Pearson's corrcoef: {best_pearson:.3f}, Last test: {val_pearson:.3f}")
+        
             # Write stats to log file
             with open(console_output_filename, 'a') as logfile:
                 logfile.write(f"\n\nTraining with parameters:\n{print_params}")
                 logfile.write(f"\nEarly stopped on epoch: {epoch}")
                 logfile.write(f"\nValidation loss: {val_loss}")
-                logfile.write(
-                    f"\nValidation Pearson's corrcoef: {val_pearson}")
-                logfile.write(
-                    f"\nValidation Spearman's corrcoef: {val_spearman}")
-                logfile.write(f"\nTraining time      : {training_time}")
-                logfile.write(f"\nTraining energy    : {training_energy}")
+                logfile.write(f"\nValidation Pearson's corrcoef: {val_pearson}")
+                logfile.write(f"\nValidation Spearman's corrcoef: {val_spearman}")
+                logfile.write(f"\nTraining time      : {training_time}") 
+                logfile.write(f"\nEmbedding time      : {embedding_time}") 
+                logfile.write(f"\nTraining energy    : {training_energy}") 
+                logfile.write(f"\nEmbedding energy    : {embedding_energy}")  
             # Write to results csv
             with open(results_file, 'a', newline='') as csvfile:
                 writer = csv.writer(csvfile)
-                writer.writerow([val_pearson, val_spearman, training_time,
-                                training_energy] + list(params.values()))
+                writer.writerow([val_pearson, val_spearman, training_time, embedding_time, training_energy, embedding_energy] + list(params.values()))
