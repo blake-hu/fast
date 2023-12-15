@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# init device variable
+device=""  
+
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --model)
@@ -14,8 +17,12 @@ while [[ $# -gt 0 ]]; do
             tasks=($2)
             shift 2
             ;;
+        --device)
+            device="$2"
+            shift 2
+            ;;
         --help)
-            echo "Usage: $0 --model <model_name> --embedding <embedding_type1 embedding_type2 ...> --tasks <task1 task2 ...>"
+            echo "Usage: $0 --model <model_name> --embedding <embedding_type1 embedding_type2 ...> --tasks <task1 task2 ...> [--device <device>]"
             exit 1
             ;;
         *)
@@ -34,7 +41,12 @@ for embed in "${embedding_types[@]}"; do
     for task in "${tasks[@]}"; do
 
         echo "======= running: ${model} ${embed} ${task} ======="
-        python3 run_task.py --model "$model" --embedding "$embed" --task "$task" --device "cuda:1"
+        
+        if [ -n "$device" ]; then
+            python3 run_task.py --model "$model" --embedding "$embed" --task "$task" --device "$device"
+        else
+            python3 run_task.py --model "$model" --embedding "$embed" --task "$task"
+        fi
 
     done
 done
