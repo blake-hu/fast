@@ -5,6 +5,7 @@ from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef
 from scipy.stats import pearsonr, spearmanr
 import time
 from tqdm.notebook import tqdm
+from carbontracker.tracker import CarbonTracker
 
 
 class EarlyStopper:
@@ -221,8 +222,15 @@ class FeedForward:
         # Run the training loop
         trainloader = torch.utils.data.DataLoader(Data(
             X, y), batch_size=self.batch_size, shuffle=True, num_workers=0, drop_last=False)
+
+        tracker = CarbonTracker(epochs=self.num_epochs) # initialize tracker
+
         for epoch in range(self.num_epochs):
-            epoch_start_time = time.time()  # Start time for this epoch
+            try: 
+                tracker.epoch_start()
+            except:
+                print("CarbonTracker error in feed forward: defaulting to old tracking method")
+                epoch_start_time = time.time()  # Start time for this epoch
 
             # Set current loss value
             current_loss = []
@@ -258,19 +266,31 @@ class FeedForward:
                 metrics = self._validate(X_val, y_val)
                 metrics["epoch"] = epoch + 1
 
-                epoch_train_time = time.time() - epoch_start_time
-                self.train_times_per_epoch.append(epoch_train_time)
-                self.energy_per_epoch.append(
-                    self.get_energy_per_epoch(epoch_train_time))
+                try:
+                    tracker.epoch_end()
+                    # temporary values for logging
+                    self.train_times_per_epoch.append(0)
+                    self.energy_per_epoch.append(0)
+                except:
+                    epoch_train_time = time.time() - epoch_start_time
+                    self.train_times_per_epoch.append(epoch_train_time)
+                    self.energy_per_epoch.append(
+                        self.get_energy_per_epoch(epoch_train_time))
                 # print(
                 #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss} | Validation Loss : {metrics['loss']} | Pearson: {metrics['pearson']}")
                 if self.stopper.early_stop(metrics["loss"]):
                     break
             else:
-                epoch_train_time = time.time() - epoch_start_time
-                self.train_times_per_epoch.append(epoch_train_time)
-                self.energy_per_epoch.append(
-                    self.get_energy_per_epoch(epoch_train_time))
+                try:
+                    tracker.epoch_end()
+                    # temporary values for logging
+                    self.train_times_per_epoch.append(0)
+                    self.energy_per_epoch.append(0)
+                except:
+                    epoch_train_time = time.time() - epoch_start_time
+                    self.train_times_per_epoch.append(epoch_train_time)
+                    self.energy_per_epoch.append(
+                        self.get_energy_per_epoch(epoch_train_time))
                 # print(
                 #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss}")
 
