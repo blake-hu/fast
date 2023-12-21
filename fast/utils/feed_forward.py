@@ -276,7 +276,7 @@ class FeedForward:
                     epoch_train_time = time.time() - epoch_start_time
                     self.train_times_per_epoch.append(epoch_train_time)
                     self.energy_per_epoch.append(
-                        get_energy(epoch_train_time))
+                        get_energy(epoch_train_time, self.device))
                 # print(
                 #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss} | Validation Loss : {metrics['loss']} | Pearson: {metrics['pearson']}")
                 if self.stopper.early_stop(metrics["loss"]):
@@ -291,7 +291,7 @@ class FeedForward:
                     epoch_train_time = time.time() - epoch_start_time
                     self.train_times_per_epoch.append(epoch_train_time)
                     self.energy_per_epoch.append(
-                        get_energy(epoch_train_time))
+                        get_energy(epoch_train_time, self.device))
                 # print(
                 #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss}")
 
