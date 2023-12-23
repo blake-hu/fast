@@ -1,6 +1,6 @@
 import torch
 
-def get_energy(time, device):
+def get_energy(time, device, verbose=False):
         """
         Finds energy usage of the given epoch
         Estimates power output of hardware (watts) and computes E = P * delta t
@@ -25,9 +25,9 @@ def get_energy(time, device):
                 gpu_power = get_power(output, re.compile(r"GPU Power: (\d+) mW"))
                 ane_power = get_power(output, re.compile(r"ANE Power: (\d+) mW"))
                 power = gpu_power + ane_power
-                print("Apple power output:", power)
+                if verbose: print("Apple power output:", power)
 
-            elif device == torch.device("gpu"):  # NVIDIA GPU
+            elif device == torch.device("gpu") or device == torch.device("cuda"):  # NVIDIA GPU
                 import pynvml  # included in python 3.9
                 
                 pynvml.nvmlInit()
@@ -35,18 +35,18 @@ def get_energy(time, device):
                 power = pynvml.nvmlDeviceGetPowerUsage(handle)  # Retrieves power usage for GPU in milliwatts
                 power = power / 1000  # convert mW to W
                 pynvml.nvmlShutdown()
-                print("NVIDIA power output:", power)
+                if verbose: print("NVIDIA power output:", power)
 
             elif device == torch.device("cpu"):  # Intel CPU
                 # Read energy_uj file
                 with open('/sys/class/powercap/intel-rapl/intel-rapl:0/energy_uj', 'r') as file:
                     energy = int(file.read().strip()) / 1_000_000  # Gets energy in microjoules, then converts to joules
-                    print("Intel energy output:", energy)
+                    if verbose: print("Intel energy output:", energy)
                     return energy
                 
         except:
             # If we can't get power from the hardware, do a manual estimate
             power = 75.0
-            print("Error fetching CPU/GPU power -- using default value:", power)
+            if verbose: print("Error fetching CPU/GPU power -- using default value:", power)
 
         return power * time

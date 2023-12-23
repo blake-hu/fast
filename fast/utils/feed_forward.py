@@ -4,7 +4,6 @@ import torch.nn as nn
 from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef
 from scipy.stats import pearsonr, spearmanr
 import time
-from tqdm.notebook import tqdm
 from carbontracker.tracker import CarbonTracker
 from .energy import get_energy
 
@@ -227,8 +226,8 @@ class FeedForward:
         if use_carbontracker:
             print("FFN: Using Carbontracker")
             tracker = CarbonTracker(epochs=self.num_epochs) # initialize tracker
-        else:
-            print("FFN: Using default time tracking")
+        # else:
+        #     print("FFN: Using default time tracking")
 
         for epoch in range(self.num_epochs):
             if use_carbontracker:
@@ -236,34 +235,23 @@ class FeedForward:
             else:
                 epoch_start_time = time.time()  # Start time for this epoch
 
-            # Set current loss value
             current_loss = []
 
-            # Iterate over the DataLoader for training data
             self.model.train()
-            for _, data in tqdm(enumerate(trainloader, 0)):
-
-                # Get and prepare inputs
+            for data in trainloader:
                 inputs, targets = data
                 inputs, targets = inputs.float().to(self.device), targets.float().to(self.device)
-
                 targets = targets.reshape((targets.shape[0], self.num_classes))
 
-                # Zero the gradients
                 self.optimizer.zero_grad()
 
-                # Perform forward pass
                 outputs = self.model(inputs)
 
-                # Compute loss
                 loss = self.loss_function(outputs, targets).to(self.device)
-
-                # Backpropagation to calculate gradients using chain rule
                 loss.backward()
-
-                # Perform optimization: Adjust each parameter by small step amount in direction of gradient
-                self.optimizer.step()
                 current_loss.append(loss.item())
+
+                self.optimizer.step()
 
             # Validation phase
             if X_val is not None and y_val is not None:
@@ -328,7 +316,7 @@ class FeedForward:
             y_pred = (outputs_val >= 0.5).to(int).cpu()
             return {
                 "loss": validation_loss,
-                "acc": accuracy_score(y_true, y_pred),
+                "accuracy": accuracy_score(y_true, y_pred),
                 "f1": f1_score(y_true, y_pred, average="micro"),
                 "mcc": matthews_corrcoef(y_true, y_pred)
             }
@@ -339,7 +327,7 @@ class FeedForward:
                 outputs_val.cpu()), axis=1)
             return {
                 "loss": validation_loss,
-                "acc": accuracy_score(y_true, y_pred),
+                "accuracy": accuracy_score(y_true, y_pred),
                 "f1": f1_score(y_true, y_pred, average="micro"),
                 "mcc": matthews_corrcoef(y_true, y_pred)
             }
