@@ -8,6 +8,7 @@ import torch
 from transformers import TrainingArguments, AdapterTrainer, logging
 from transformers.adapters import BertAdapterModel
 
+
 class BERTAdapter:
     """
     A wrapper class for the BERT+Adapter implementation
@@ -44,6 +45,7 @@ class BERTAdapter:
         # Load the model with the specified device
         self.model = BertAdapterModel.from_pretrained("bert-base-uncased", num_labels=self.num_labels).to(self.device)
 
+        self.train_stop_flag = False # Signal thread stop condition for benchmarking
 
     def fit(self, X, y, X_val, y_val):
         """
@@ -87,6 +89,7 @@ class BERTAdapter:
                         eval_dataset=subset_eval,
                         compute_metrics=compute_metrics)
         trainer.train()
+        self.train_stop_flag = True
 
     
     def predict(self, X):

@@ -463,7 +463,7 @@ if __name__ == "__main__":
         training_time = np.mean(train_times_per_epoch)
         training_energy = np.mean(energy_per_epoch) 
         # Compute energy for embedding generation
-        embedding_energy = get_energy(embedding_time) # This method effectively just computes energy for a given time
+        embedding_energy = get_energy(embedding_time, device) # This method effectively just computes energy for a given time
 
         if task_config.class_type in ["BC", "MC"]:
             epoch, val_loss, val_accuracy, val_f1, val_mcc = metrics["epoch"], metrics["loss"], metrics["acc"], metrics["f1"], metrics["mcc"]

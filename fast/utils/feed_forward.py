@@ -6,7 +6,7 @@ from scipy.stats import pearsonr, spearmanr
 import time
 from tqdm.notebook import tqdm
 from carbontracker.tracker import CarbonTracker
-from energy import get_energy
+from .energy import get_energy
 
 
 class EarlyStopper:
@@ -202,7 +202,7 @@ class FeedForward:
         self.train_times_per_epoch = []
         self.energy_per_epoch = []
 
-    def fit(self, X, y, X_val=None, y_val=None):
+    def fit(self, X, y, X_val=None, y_val=None, use_carbontracker=False):
         """
         Trains the model using the provided dataset.
 
@@ -223,14 +223,17 @@ class FeedForward:
         # Run the training loop
         trainloader = torch.utils.data.DataLoader(Data(
             X, y), batch_size=self.batch_size, shuffle=True, num_workers=0, drop_last=False)
-
-        tracker = CarbonTracker(epochs=self.num_epochs) # initialize tracker
+        
+        if use_carbontracker:
+            print("FFN: Using Carbontracker")
+            tracker = CarbonTracker(epochs=self.num_epochs) # initialize tracker
+        else:
+            print("FFN: Using default time tracking")
 
         for epoch in range(self.num_epochs):
-            try: 
+            if use_carbontracker:
                 tracker.epoch_start()
-            except:
-                print("CarbonTracker error in feed forward: defaulting to old tracking method")
+            else:
                 epoch_start_time = time.time()  # Start time for this epoch
 
             # Set current loss value
@@ -267,12 +270,12 @@ class FeedForward:
                 metrics = self._validate(X_val, y_val)
                 metrics["epoch"] = epoch + 1
 
-                try:
+                if use_carbontracker:
                     tracker.epoch_end()
                     # temporary values for logging
                     self.train_times_per_epoch.append(0)
                     self.energy_per_epoch.append(0)
-                except:
+                else:
                     epoch_train_time = time.time() - epoch_start_time
                     self.train_times_per_epoch.append(epoch_train_time)
                     self.energy_per_epoch.append(
@@ -282,12 +285,12 @@ class FeedForward:
                 if self.stopper.early_stop(metrics["loss"]):
                     break
             else:
-                try:
+                if use_carbontracker:
                     tracker.epoch_end()
                     # temporary values for logging
                     self.train_times_per_epoch.append(0)
                     self.energy_per_epoch.append(0)
-                except:
+                else:
                     epoch_train_time = time.time() - epoch_start_time
                     self.train_times_per_epoch.append(epoch_train_time)
                     self.energy_per_epoch.append(
