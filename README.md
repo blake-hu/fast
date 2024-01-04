@@ -1,10 +1,10 @@
-# ProjectX @ Northwestern: Fast, efficient transformers
-**Creating faster and more efficient transformers through novel fine-tuning and inference methods**
+# FAST: Feed-forward Assisted Transformers
+**Creating faster and more efficient transformers through novel fine-tuning methods**
 
 Team Members: Blake Hu, Julian Baldwin, Marko Veljanovski, Michelle Zhang, Sophia Pi, Stephen Cheng
 
 ## FAST: Feedforward-Augmented Sentence Transformers
-Generalizing sentence embeddings to a wide range of natural language tasks using feedforward neural networks, with up to 240x speedup on fine-tuning. Inspired by DoubleLingo.
+Generalizing sentence embeddings to a wide range of natural language tasks using feedforward neural networks, with massive speedup on fine-tuning. Inspired by DoubleLingo.
 
 ### Setup
 ```
@@ -17,6 +17,3 @@ pip install adapter-transformers==3.2.1
 ```
 
 Setup is slightly tricky since ```adapter-transformers``` is a direct fork of ```transformers```, but ```sentence-transformers``` automatically installs ```transformers``` which ideally should not be installed in the same environment as ```adapter-transformers```. Doing the above is a simple quick fix.
-
-## Early Exit GPT
-Applying early exit strategies to GPT models, comparing efficiency gains with early exit strategies in other models.
