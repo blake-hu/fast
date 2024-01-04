@@ -9,3 +9,4 @@ datasets==2.14.5
 ipywidgets==8.1.1
 sentence-transformers==2.2.2
 jupyterlab==4.0.8
+carbontracker==1.2.5
