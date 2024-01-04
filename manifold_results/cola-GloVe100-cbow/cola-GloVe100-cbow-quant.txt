@@ -1,0 +1,2 @@
+Randomized PCA intrinsic dimensionality estimates given threshold
+{0.6: 14, 0.8: 35, 0.9: 56, 0.95: 72, 0.975: 83}
