@@ -7,6 +7,8 @@ import time
 from carbontracker.tracker import CarbonTracker
 from .energy import get_energy
 
+from thop import profile
+from thop import clever_format
 
 class EarlyStopper:
     """
@@ -200,6 +202,8 @@ class FeedForward:
         # Benchmarking: track training time and power usage per epoch
         self.train_times_per_epoch = []
         self.energy_per_epoch = []
+        self.flops = 0
+        self.params_count = 0
 
     def fit(self, X, y, X_val=None, y_val=None, use_carbontracker=False):
         """
@@ -248,6 +252,12 @@ class FeedForward:
                 outputs = self.model(inputs)
 
                 loss = self.loss_function(outputs, targets).to(self.device)
+
+                # FLOPs Counting
+                if epoch == 0:
+                    flops, params = profile(self.model, inputs=(inputs, ))
+                    self.flops, self.params_count = clever_format([flops, params], "%.3f") 
+
                 loss.backward()
                 current_loss.append(loss.item())
 
@@ -288,7 +298,7 @@ class FeedForward:
 
         # print(f'Training process has finished.')
         if X_val is not None and y_val is not None:
-            return metrics, self.train_times_per_epoch, self.energy_per_epoch
+            return metrics, self.train_times_per_epoch, self.energy_per_epoch, self.flops, self.params_count
 
     def _validate(self, X, y_true):
         """

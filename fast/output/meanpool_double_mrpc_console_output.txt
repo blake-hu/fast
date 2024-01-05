@@ -1,0 +1,2737 @@
+
+
+BEGIN TRAINING LOOP
+
+
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2978812459786315
+Validation f1: 0.7254901960784313
+Validation accuracy: 0.7254901960784313
+Training time      : 0.6629200246598985
+Embedding time      : 184.83720993995667
+Training energy    : 49.71900184949239
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2917623974053007
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.505139536327786
+Embedding time      : 184.83720993995667
+Training energy    : 37.885465224583946
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.29139880499928505
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.7912422929491315
+Embedding time      : 184.83720993995667
+Training energy    : 59.343171971184866
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.2863929419551458
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.7518604482923236
+Embedding time      : 184.83720993995667
+Training energy    : 56.389533621924265
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.33628015310583403
+Validation f1: 0.7303921568627451
+Validation accuracy: 0.7303921568627451
+Training time      : 0.9526856626783099
+Embedding time      : 184.83720993995667
+Training energy    : 71.45142470087323
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.3158957576775359
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 0.9638926982879639
+Embedding time      : 184.83720993995667
+Training energy    : 72.29195237159729
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.5809952872140067
+Embedding time      : 184.83720993995667
+Training energy    : 118.5746465410505
+Embedding energy    : 13862.79074549675
+
+BEGIN TRAINING LOOP
+
+
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2978812459786315
+Validation f1: 0.7254901960784313
+Validation accuracy: 0.7254901960784313
+Training time      : 0.5423358016543918
+Embedding time      : 184.83720993995667
+Training energy    : 40.675185124079384
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2917623974053007
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.5267758899264865
+Embedding time      : 184.83720993995667
+Training energy    : 39.50819174448649
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.29139880499928505
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.8054728167397636
+Embedding time      : 184.83720993995667
+Training energy    : 60.41046125548227
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.2863929419551458
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.8244664328438895
+Embedding time      : 184.83720993995667
+Training energy    : 61.834982463291716
+Embedding energy    : 13862.79074549675
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.33628015310583403
+Validation f1: 0.7303921568627451
+Validation accuracy: 0.7303921568627451
+Training time      : 0.9433481352669852
+Embedding time      : 184.83720993995667
+Training energy    : 70.75111014502389
+Embedding energy    : 13862.79074549675
+
+BEGIN TRAINING LOOP
+
+
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2978812459786315
+Validation f1: 0.7254901960784313
+Validation accuracy: 0.7254901960784313
+Training time      : 0.5214002927144369
+Embedding time      : 0.0001239776611328125
+Training energy    : 39.105021953582764
+Embedding energy    : 0.009298324584960938
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2917623974053007
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.4724314742618137
+Embedding time      : 0.0001239776611328125
+Training energy    : 35.432360569636025
+Embedding energy    : 0.009298324584960938
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.29139880499928505
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.7307370730808803
+Embedding time      : 0.0001239776611328125
+Training energy    : 54.80528048106602
+Embedding energy    : 0.009298324584960938
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.2863929419551458
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.722205638885498
+Embedding time      : 0.0001239776611328125
+Training energy    : 54.16542291641235
+Embedding energy    : 0.009298324584960938
+
+BEGIN TRAINING LOOP
+
+
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2978812459786315
+Validation f1: 0.7254901960784313
+Validation accuracy: 0.7254901960784313
+Training time      : 0.5774063004387749
+Embedding time      : 0.0004432201385498047
+Training energy    : 43.30547253290812
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2917623974053007
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.46446381674872506
+Embedding time      : 0.0004432201385498047
+Training energy    : 34.83478625615438
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.29139880499928505
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.8124101843152728
+Embedding time      : 0.0004432201385498047
+Training energy    : 60.93076382364546
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.2863929419551458
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.7370953559875488
+Embedding time      : 0.0004432201385498047
+Training energy    : 55.28215169906616
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.33628015310583403
+Validation f1: 0.7303921568627451
+Validation accuracy: 0.7303921568627451
+Training time      : 0.8704424585614886
+Embedding time      : 0.0004432201385498047
+Training energy    : 65.28318439211164
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.3158957576775359
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 0.8733229977743966
+Embedding time      : 0.0004432201385498047
+Training energy    : 65.49922483307975
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.4486167090279716
+Embedding time      : 0.0004432201385498047
+Training energy    : 108.64625317709786
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.452007600239345
+Embedding time      : 0.0004432201385498047
+Training energy    : 108.90057001795087
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.35636198397113483
+Validation f1: 0.6985294117647058
+Validation accuracy: 0.6985294117647058
+Training time      : 0.49407243728637695
+Embedding time      : 0.0004432201385498047
+Training energy    : 37.05543279647827
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.3531338109393747
+Validation f1: 0.6985294117647058
+Validation accuracy: 0.6985294117647058
+Training time      : 0.45894280076026917
+Embedding time      : 0.0004432201385498047
+Training energy    : 34.42071005702019
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.3327407783021683
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.7434295177459717
+Embedding time      : 0.0004432201385498047
+Training energy    : 55.757213830947876
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.3406960479648863
+Validation f1: 0.6740196078431373
+Validation accuracy: 0.6740196078431373
+Training time      : 0.7037363052368164
+Embedding time      : 0.0004432201385498047
+Training energy    : 52.78022289276123
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.2979917389909439
+Validation f1: 0.7205882352941176
+Validation accuracy: 0.7205882352941176
+Training time      : 0.8591437339782715
+Embedding time      : 0.0004432201385498047
+Training energy    : 64.43578004837036
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.3379217945567941
+Validation f1: 0.6642156862745098
+Validation accuracy: 0.6642156862745098
+Training time      : 0.8624891213008335
+Embedding time      : 0.0004432201385498047
+Training energy    : 64.68668409756252
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.4908846219380696
+Embedding time      : 0.0004432201385498047
+Training energy    : 111.81634664535522
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.4834285974502563
+Embedding time      : 0.0004432201385498047
+Training energy    : 111.25714480876923
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.2903482813126961
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 0.4906128815242222
+Embedding time      : 0.0004432201385498047
+Training energy    : 36.79596611431667
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.27490018559507223
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.4688399519239153
+Embedding time      : 0.0004432201385498047
+Training energy    : 35.16299639429365
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.32045122623419015
+Validation f1: 0.7303921568627451
+Validation accuracy: 0.7303921568627451
+Training time      : 0.7401280403137207
+Embedding time      : 0.0004432201385498047
+Training energy    : 55.50960302352905
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2587859271498807
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.719914436340332
+Embedding time      : 0.0004432201385498047
+Training energy    : 53.9935827255249
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.28899098279705654
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.8834614515304565
+Embedding time      : 0.0004432201385498047
+Training energy    : 66.25960886478424
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.3290755269570657
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.9118756453196207
+Embedding time      : 0.0004432201385498047
+Training energy    : 68.39067339897156
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.6452815930048625
+Embedding time      : 0.0004432201385498047
+Training energy    : 123.39611947536469
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.582463026046753
+Embedding time      : 0.0004432201385498047
+Training energy    : 118.68472695350647
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 4
+Validation mcc: 0.260944212688528
+Validation f1: 0.49264705882352944
+Validation accuracy: 0.49264705882352944
+Training time      : 0.5667449831962585
+Embedding time      : 0.0004432201385498047
+Training energy    : 42.50587373971939
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 4
+Validation mcc: 0.2639129308321546
+Validation f1: 0.4950980392156863
+Validation accuracy: 0.4950980392156863
+Training time      : 0.5150845646858215
+Embedding time      : 0.0004432201385498047
+Training energy    : 38.631342351436615
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.29361997673663537
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.7653013229370117
+Embedding time      : 0.0004432201385498047
+Training energy    : 57.39759922027588
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.293567006384937
+Validation f1: 0.6029411764705882
+Validation accuracy: 0.6029411764705882
+Training time      : 0.7561415301428901
+Embedding time      : 0.0004432201385498047
+Training energy    : 56.71061476071676
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.3349356529644953
+Validation f1: 0.6593137254901961
+Validation accuracy: 0.6593137254901961
+Training time      : 1.0252270301183064
+Embedding time      : 0.0004432201385498047
+Training energy    : 76.89202725887299
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.31589786297740785
+Validation f1: 0.6691176470588235
+Validation accuracy: 0.6691176470588235
+Training time      : 1.0312165021896362
+Embedding time      : 0.0004432201385498047
+Training energy    : 77.34123766422272
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.6492336750030518
+Embedding time      : 0.0004432201385498047
+Training energy    : 123.69252562522888
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.6396282586184414
+Embedding time      : 0.0004432201385498047
+Training energy    : 122.9721193963831
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3371154287839687
+Validation f1: 0.6740196078431373
+Validation accuracy: 0.6740196078431373
+Training time      : 0.5422283411026001
+Embedding time      : 0.0004432201385498047
+Training energy    : 40.66712558269501
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.348250704563964
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.5206667847103543
+Embedding time      : 0.0004432201385498047
+Training energy    : 39.05000885327657
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.30558389526116714
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 1.0979329586029052
+Embedding time      : 0.0004432201385498047
+Training energy    : 82.3449718952179
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.35079811036670805
+Validation f1: 0.735294117647059
+Validation accuracy: 0.7352941176470589
+Training time      : 1.0683520317077637
+Embedding time      : 0.0004432201385498047
+Training energy    : 80.12640237808228
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.32891410189301756
+Validation f1: 0.6911764705882353
+Validation accuracy: 0.6911764705882353
+Training time      : 1.7215761840343475
+Embedding time      : 0.0004432201385498047
+Training energy    : 129.11821380257607
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.3474459642859549
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 1.7170232295989991
+Embedding time      : 0.0004432201385498047
+Training energy    : 128.77674221992493
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 4
+Validation mcc: 0.0
+Validation f1: 0.3161764705882353
+Validation accuracy: 0.3161764705882353
+Training time      : 3.3967623114585876
+Embedding time      : 0.0004432201385498047
+Training energy    : 254.75717335939407
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.2709436433608054
+Validation f1: 0.4950980392156863
+Validation accuracy: 0.4950980392156863
+Training time      : 3.378012013435364
+Embedding time      : 0.0004432201385498047
+Training energy    : 253.35090100765228
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 44
+Validation mcc: 0.3423607740870295
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.48708455670963635
+Embedding time      : 0.0004432201385498047
+Training energy    : 36.531341753222726
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 44
+Validation mcc: 0.3423607740870295
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.48883189396424725
+Embedding time      : 0.0004432201385498047
+Training energy    : 36.66239204731855
+Embedding energy    : 0.03324151039123535
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 19
+Validation mcc: 0.3367801923286518
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.7364667214845356
+Embedding time      : 0.0004432201385498047
+Training energy    : 55.235004111340174
+Embedding energy    : 0.03324151039123535
+
+BEGIN TRAINING LOOP
+
+
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2978812459786315
+Validation f1: 0.7254901960784313
+Validation accuracy: 0.7254901960784313
+Training time      : 0.6575234995947944
+Embedding time      : 0.0001289844512939453
+Training energy    : 49.31426246960958
+Embedding energy    : 0.009673833847045898
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2917623974053007
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.5840394232008193
+Embedding time      : 0.0001289844512939453
+Training energy    : 43.80295674006144
+Embedding energy    : 0.009673833847045898
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.29139880499928505
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.8633927958352225
+Embedding time      : 0.0001289844512939453
+Training energy    : 64.75445968764168
+Embedding energy    : 0.009673833847045898
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.2863929419551458
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.8437324251447406
+Embedding time      : 0.0001289844512939453
+Training energy    : 63.27993188585554
+Embedding energy    : 0.009673833847045898
+
+BEGIN TRAINING LOOP
+
+
+
+BEGIN TRAINING LOOP
+
+
+
+BEGIN TRAINING LOOP
+
+
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2978812459786315
+Validation f1: 0.7254901960784313
+Validation accuracy: 0.7254901960784313
+Training time      : 0.5816570387946235
+Embedding time      : 0.0001468658447265625
+Training energy    : 43.62427790959676
+Embedding energy    : 0.011014938354492188
+
+BEGIN TRAINING LOOP
+
+
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2978812459786315
+Validation f1: 0.7254901960784313
+Validation accuracy: 0.7254901960784313
+Training time      : 0.571043438381619
+Embedding time     : 0.0001468658447265625
+Training energy    : 42.82825787862142
+Embedding energy   : 0.011014938354492188\FLOPs               : 184.560K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2917623974053007
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.5666097535027398
+Embedding time     : 0.0001468658447265625
+Training energy    : 42.49573151270548
+Embedding energy   : 0.011014938354492188\FLOPs               : 184.560K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.29139880499928505
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.850088289805821
+Embedding time     : 0.0001468658447265625
+Training energy    : 63.756621735436575
+Embedding energy   : 0.011014938354492188\FLOPs               : 190.320K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.2863929419551458
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.8730047430310931
+Embedding time     : 0.0001468658447265625
+Training energy    : 65.47535572733197
+Embedding energy   : 0.011014938354492188\FLOPs               : 190.320K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.33628015310583403
+Validation f1: 0.7303921568627451
+Validation accuracy: 0.7303921568627451
+Training time      : 1.1930014405931746
+Embedding time     : 0.0001468658447265625
+Training energy    : 89.4751080444881
+Embedding energy   : 0.011014938354492188\FLOPs               : 196.080K
+Parameters         : 9.865K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.3158957576775359
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 1.1721737044198173
+Embedding time     : 0.0001468658447265625
+Training energy    : 87.91302783148629
+Embedding energy   : 0.011014938354492188\FLOPs               : 196.080K
+Parameters         : 9.865K
+
+BEGIN TRAINING LOOP
+
+
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2978812459786315
+Validation f1: 0.7254901960784313
+Validation accuracy: 0.7254901960784313
+Training time      : 0.5469469494289823
+Embedding time     : 0.00011587142944335938
+Training energy    : 41.02102120717367
+Embedding energy   : 0.008690357208251953\FLOPs               : 184.560K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2917623974053007
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.5024890104929606
+Embedding time     : 0.00011587142944335938
+Training energy    : 37.686675786972046
+Embedding energy   : 0.008690357208251953\FLOPs               : 184.560K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.29139880499928505
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.8406453813825335
+Embedding time     : 0.00011587142944335938
+Training energy    : 63.04840360369001
+Embedding energy   : 0.008690357208251953\FLOPs               : 190.320K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.2863929419551458
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.7885422366006034
+Embedding time     : 0.00011587142944335938
+Training energy    : 59.140667745045256
+Embedding energy   : 0.008690357208251953\FLOPs               : 190.320K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.33628015310583403
+Validation f1: 0.7303921568627451
+Validation accuracy: 0.7303921568627451
+Training time      : 0.9918585504804339
+Embedding time     : 0.00011587142944335938
+Training energy    : 74.38939128603253
+Embedding energy   : 0.008690357208251953\FLOPs               : 196.080K
+Parameters         : 9.865K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.3158957576775359
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 1.0526775291987829
+Embedding time     : 0.00011587142944335938
+Training energy    : 78.95081468990871
+Embedding energy   : 0.008690357208251953\FLOPs               : 196.080K
+Parameters         : 9.865K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.5851663521357946
+Embedding time     : 0.00011587142944335938
+Training energy    : 118.88747641018459
+Embedding energy   : 0.008690357208251953\FLOPs               : 210.480K
+Parameters         : 10.645K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.5628622600010462
+Embedding time     : 0.00011587142944335938
+Training energy    : 117.21466950007847
+Embedding energy   : 0.008690357208251953\FLOPs               : 210.480K
+Parameters         : 10.645K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.35636198397113483
+Validation f1: 0.6985294117647058
+Validation accuracy: 0.6985294117647058
+Training time      : 0.5390578210353851
+Embedding time     : 0.00011587142944335938
+Training energy    : 40.429336577653885
+Embedding energy   : 0.008690357208251953\FLOPs               : 738.240K
+Parameters         : 36.961K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.3531338109393747
+Validation f1: 0.6985294117647058
+Validation accuracy: 0.6985294117647058
+Training time      : 0.5018795430660248
+Embedding time     : 0.00011587142944335938
+Training energy    : 37.64096572995186
+Embedding energy   : 0.008690357208251953\FLOPs               : 738.240K
+Parameters         : 36.961K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.3327407783021683
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.7667971611022949
+Embedding time     : 0.00011587142944335938
+Training energy    : 57.50978708267212
+Embedding energy   : 0.008690357208251953\FLOPs               : 830.400K
+Parameters         : 41.665K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.3406960479648863
+Validation f1: 0.6740196078431373
+Validation accuracy: 0.6740196078431373
+Training time      : 0.7499680519104004
+Embedding time     : 0.00011587142944335938
+Training energy    : 56.24760389328003
+Embedding energy   : 0.008690357208251953\FLOPs               : 830.400K
+Parameters         : 41.665K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.2979917389909439
+Validation f1: 0.7205882352941176
+Validation accuracy: 0.7205882352941176
+Training time      : 0.9508031606674194
+Embedding time     : 0.00011587142944335938
+Training energy    : 71.31023705005646
+Embedding energy   : 0.008690357208251953\FLOPs               : 922.560K
+Parameters         : 46.369K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.3379217945567941
+Validation f1: 0.6642156862745098
+Validation accuracy: 0.6642156862745098
+Training time      : 0.9450203350612095
+Embedding time     : 0.00011587142944335938
+Training energy    : 70.87652512959072
+Embedding energy   : 0.008690357208251953\FLOPs               : 922.560K
+Parameters         : 46.369K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.5833923816680908
+Embedding time     : 0.00011587142944335938
+Training energy    : 118.75442862510681
+Embedding energy   : 0.008690357208251953\FLOPs               : 1.153M
+Parameters         : 58.129K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.5664273103078206
+Embedding time     : 0.00011587142944335938
+Training energy    : 117.48204827308655
+Embedding energy   : 0.008690357208251953\FLOPs               : 1.153M
+Parameters         : 58.129K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.2903482813126961
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 0.5198355402265277
+Embedding time     : 0.00011587142944335938
+Training energy    : 38.98766551698957
+Embedding energy   : 0.008690357208251953\FLOPs               : 2.953M
+Parameters         : 147.841K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.27490018559507223
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.4984198638371059
+Embedding time     : 0.00011587142944335938
+Training energy    : 37.38148978778294
+Embedding energy   : 0.008690357208251953\FLOPs               : 2.953M
+Parameters         : 147.841K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.32045122623419015
+Validation f1: 0.7303921568627451
+Validation accuracy: 0.7303921568627451
+Training time      : 0.7708994282616509
+Embedding time     : 0.00011587142944335938
+Training energy    : 57.81745711962382
+Embedding energy   : 0.008690357208251953\FLOPs               : 4.428M
+Parameters         : 221.953K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.2587859271498807
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.7598357465532091
+Embedding time     : 0.00011587142944335938
+Training energy    : 56.987680991490684
+Embedding energy   : 0.008690357208251953\FLOPs               : 4.428M
+Parameters         : 221.953K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.28899098279705654
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.9139186143875122
+Embedding time     : 0.00011587142944335938
+Training energy    : 68.54389607906342
+Embedding energy   : 0.008690357208251953\FLOPs               : 5.902M
+Parameters         : 296.065K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.3290755269570657
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.9204973777135214
+Embedding time     : 0.00011587142944335938
+Training energy    : 69.0373033285141
+Embedding energy   : 0.008690357208251953\FLOPs               : 5.902M
+Parameters         : 296.065K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.6036973396937053
+Embedding time     : 0.00011587142944335938
+Training energy    : 120.2773004770279
+Embedding energy   : 0.008690357208251953\FLOPs               : 9.588M
+Parameters         : 481.345K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.6039727687835694
+Embedding time     : 0.00011587142944335938
+Training energy    : 120.2979576587677
+Embedding energy   : 0.008690357208251953\FLOPs               : 9.588M
+Parameters         : 481.345K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 4
+Validation mcc: 0.260944212688528
+Validation f1: 0.49264705882352944
+Validation accuracy: 0.49264705882352944
+Training time      : 0.5649457573890686
+Embedding time     : 0.00011587142944335938
+Training energy    : 42.370931804180145
+Embedding energy   : 0.008690357208251953\FLOPs               : 11.812M
+Parameters         : 591.361K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 4
+Validation mcc: 0.2639129308321546
+Validation f1: 0.4950980392156863
+Validation accuracy: 0.4950980392156863
+Training time      : 0.5360063910484314
+Embedding time     : 0.00011587142944335938
+Training energy    : 40.200479328632355
+Embedding energy   : 0.008690357208251953\FLOPs               : 11.812M
+Parameters         : 591.361K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.29361997673663537
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.7789379596710205
+Embedding time     : 0.00011587142944335938
+Training energy    : 58.42034697532654
+Embedding energy   : 0.008690357208251953\FLOPs               : 35.405M
+Parameters         : 1.773M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.293567006384937
+Validation f1: 0.6029411764705882
+Validation accuracy: 0.6029411764705882
+Training time      : 0.7719082832336426
+Embedding time     : 0.00011587142944335938
+Training energy    : 57.89312124252319
+Embedding energy   : 0.008690357208251953\FLOPs               : 35.405M
+Parameters         : 1.773M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.3349356529644953
+Validation f1: 0.6593137254901961
+Validation accuracy: 0.6593137254901961
+Training time      : 1.0424991448720295
+Embedding time     : 0.00011587142944335938
+Training energy    : 78.18743586540222
+Embedding energy   : 0.008690357208251953\FLOPs               : 58.998M
+Parameters         : 2.954M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.31589786297740785
+Validation f1: 0.6691176470588235
+Validation accuracy: 0.6691176470588235
+Training time      : 1.1496150096257527
+Embedding time     : 0.00011587142944335938
+Training energy    : 86.22112572193146
+Embedding energy   : 0.008690357208251953\FLOPs               : 58.998M
+Parameters         : 2.954M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.8388214588165284
+Embedding time     : 0.00011587142944335938
+Training energy    : 137.91160941123962
+Embedding energy   : 0.008690357208251953\FLOPs               : 117.980M
+Parameters         : 5.907M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 1.7137361656535754
+Embedding time     : 0.00011587142944335938
+Training energy    : 128.53021242401817
+Embedding energy   : 0.008690357208251953\FLOPs               : 117.980M
+Parameters         : 5.907M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3371154287839687
+Validation f1: 0.6740196078431373
+Validation accuracy: 0.6740196078431373
+Training time      : 0.5640457391738891
+Embedding time     : 0.00011587142944335938
+Training energy    : 42.30343043804169
+Embedding energy   : 0.008690357208251953\FLOPs               : 23.624M
+Parameters         : 1.183M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.348250704563964
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.5211266676584879
+Embedding time     : 0.00011587142944335938
+Training energy    : 39.0845000743866
+Embedding energy   : 0.008690357208251953\FLOPs               : 23.624M
+Parameters         : 1.183M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.30558389526116714
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 1.111051654815674
+Embedding time     : 0.00011587142944335938
+Training energy    : 83.32887411117554
+Embedding energy   : 0.008690357208251953\FLOPs               : 117.996M
+Parameters         : 5.904M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.35079811036670805
+Validation f1: 0.735294117647059
+Validation accuracy: 0.7352941176470589
+Training time      : 1.092710828781128
+Embedding time     : 0.00011587142944335938
+Training energy    : 81.9533121585846
+Embedding energy   : 0.008690357208251953\FLOPs               : 117.996M
+Parameters         : 5.904M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.32891410189301756
+Validation f1: 0.6911764705882353
+Validation accuracy: 0.6911764705882353
+Training time      : 1.740694373846054
+Embedding time     : 0.00011587142944335938
+Training energy    : 130.55207803845406
+Embedding energy   : 0.008690357208251953\FLOPs               : 212.367M
+Parameters         : 10.626M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.3474459642859549
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 1.758413553237915
+Embedding time     : 0.00011587142944335938
+Training energy    : 131.88101649284363
+Embedding energy   : 0.008690357208251953\FLOPs               : 212.367M
+Parameters         : 10.626M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 4
+Validation mcc: 0.0
+Validation f1: 0.3161764705882353
+Validation accuracy: 0.3161764705882353
+Training time      : 3.426775813102722
+Embedding time     : 0.00011587142944335938
+Training energy    : 257.00818598270416
+Embedding energy   : 0.008690357208251953\FLOPs               : 448.297M
+Parameters         : 22.430M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.2709436433608054
+Validation f1: 0.4950980392156863
+Validation accuracy: 0.4950980392156863
+Training time      : 3.3984206438064577
+Embedding time     : 0.00011587142944335938
+Training energy    : 254.8815482854843
+Embedding energy   : 0.008690357208251953\FLOPs               : 448.297M
+Parameters         : 22.430M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 44
+Validation mcc: 0.3423607740870295
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.4956208955157887
+Embedding time     : 0.00011587142944335938
+Training energy    : 37.17156716368415
+Embedding energy   : 0.008690357208251953\FLOPs               : 184.560K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 44
+Validation mcc: 0.3423607740870295
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.48927607319571753
+Embedding time     : 0.00011587142944335938
+Training energy    : 36.695705489678815
+Embedding energy   : 0.008690357208251953\FLOPs               : 184.560K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 19
+Validation mcc: 0.3367801923286518
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.7392191259484542
+Embedding time     : 0.00011587142944335938
+Training energy    : 55.44143444613407
+Embedding energy   : 0.008690357208251953\FLOPs               : 190.320K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 19
+Validation mcc: 0.3297356189558788
+Validation f1: 0.7083333333333334
+Validation accuracy: 0.7083333333333334
+Training time      : 0.7387712629217851
+Embedding time     : 0.00011587142944335938
+Training energy    : 55.40784471913388
+Embedding energy   : 0.008690357208251953\FLOPs               : 190.320K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 16
+Validation mcc: 0.36537308860141177
+Validation f1: 0.6862745098039216
+Validation accuracy: 0.6862745098039216
+Training time      : 0.94368676841259
+Embedding time     : 0.00011587142944335938
+Training energy    : 70.77650763094425
+Embedding energy   : 0.008690357208251953\FLOPs               : 196.080K
+Parameters         : 9.865K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 16
+Validation mcc: 0.36537308860141177
+Validation f1: 0.6862745098039216
+Validation accuracy: 0.6862745098039216
+Training time      : 0.9706048369407654
+Embedding time     : 0.00011587142944335938
+Training energy    : 72.7953627705574
+Embedding energy   : 0.008690357208251953\FLOPs               : 196.080K
+Parameters         : 9.865K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 15
+Validation mcc: 0.3342360578828766
+Validation f1: 0.6985294117647058
+Validation accuracy: 0.6985294117647058
+Training time      : 1.5356554985046387
+Embedding time     : 0.00011587142944335938
+Training energy    : 115.1741623878479
+Embedding energy   : 0.008690357208251953\FLOPs               : 210.480K
+Parameters         : 10.645K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 15
+Validation mcc: 0.3320872423807555
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 1.518710740407308
+Embedding time     : 0.00011587142944335938
+Training energy    : 113.9033055305481
+Embedding energy   : 0.008690357208251953\FLOPs               : 210.480K
+Parameters         : 10.645K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 29
+Validation mcc: 0.3317082971548591
+Validation f1: 0.7156862745098039
+Validation accuracy: 0.7156862745098039
+Training time      : 0.4894601394390238
+Embedding time     : 0.00011587142944335938
+Training energy    : 36.70951045792678
+Embedding energy   : 0.008690357208251953\FLOPs               : 738.240K
+Parameters         : 36.961K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 29
+Validation mcc: 0.33437578116579914
+Validation f1: 0.7156862745098039
+Validation accuracy: 0.7156862745098039
+Training time      : 0.49130461133759595
+Embedding time     : 0.00011587142944335938
+Training energy    : 36.8478458503197
+Embedding energy   : 0.008690357208251953\FLOPs               : 738.240K
+Parameters         : 36.961K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3320872423807555
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.7407652854919433
+Embedding time     : 0.00011587142944335938
+Training energy    : 55.55739641189575
+Embedding energy   : 0.008690357208251953\FLOPs               : 830.400K
+Parameters         : 41.665K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.33115948701592307
+Validation f1: 0.6985294117647058
+Validation accuracy: 0.6985294117647058
+Training time      : 0.7391494750976563
+Embedding time     : 0.00011587142944335938
+Training energy    : 55.43621063232422
+Embedding energy   : 0.008690357208251953\FLOPs               : 830.400K
+Parameters         : 41.665K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.34114726910969095
+Validation f1: 0.6862745098039216
+Validation accuracy: 0.6862745098039216
+Training time      : 0.9178984959920248
+Embedding time     : 0.00011587142944335938
+Training energy    : 68.84238719940186
+Embedding energy   : 0.008690357208251953\FLOPs               : 922.560K
+Parameters         : 46.369K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.33535174338161816
+Validation f1: 0.6911764705882353
+Validation accuracy: 0.6911764705882353
+Training time      : 0.9255425333976746
+Embedding time     : 0.00011587142944335938
+Training energy    : 69.41569000482559
+Embedding energy   : 0.008690357208251953\FLOPs               : 922.560K
+Parameters         : 46.369K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.3231989414989917
+Validation f1: 0.6764705882352942
+Validation accuracy: 0.6764705882352942
+Training time      : 1.5628599524497986
+Embedding time     : 0.00011587142944335938
+Training energy    : 117.2144964337349
+Embedding energy   : 0.008690357208251953\FLOPs               : 1.153M
+Parameters         : 58.129K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.3590225126742064
+Validation f1: 0.6740196078431373
+Validation accuracy: 0.6740196078431373
+Training time      : 1.554293930530548
+Embedding time     : 0.00011587142944335938
+Training energy    : 116.57204478979111
+Embedding energy   : 0.008690357208251953\FLOPs               : 1.153M
+Parameters         : 58.129K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 15
+Validation mcc: 0.35550189225776246
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.4969189961751302
+Embedding time     : 0.00011587142944335938
+Training energy    : 37.268924713134766
+Embedding energy   : 0.008690357208251953\FLOPs               : 2.953M
+Parameters         : 147.841K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 15
+Validation mcc: 0.35550189225776246
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.49728043874104816
+Embedding time     : 0.00011587142944335938
+Training energy    : 37.29603290557861
+Embedding energy   : 0.008690357208251953\FLOPs               : 2.953M
+Parameters         : 147.841K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.3544343285653969
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.758669376373291
+Embedding time     : 0.00011587142944335938
+Training energy    : 56.900203227996826
+Embedding energy   : 0.008690357208251953\FLOPs               : 4.428M
+Parameters         : 221.953K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.271632799249853
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.7549536757998996
+Embedding time     : 0.00011587142944335938
+Training energy    : 56.62152568499247
+Embedding energy   : 0.008690357208251953\FLOPs               : 4.428M
+Parameters         : 221.953K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.3335873802234632
+Validation f1: 0.6764705882352942
+Validation accuracy: 0.6764705882352942
+Training time      : 0.9259412288665771
+Embedding time     : 0.00011587142944335938
+Training energy    : 69.44559216499329
+Embedding energy   : 0.008690357208251953\FLOPs               : 5.902M
+Parameters         : 296.065K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.3372890054811421
+Validation f1: 0.6813725490196079
+Validation accuracy: 0.6813725490196079
+Training time      : 0.9264734387397766
+Embedding time     : 0.00011587142944335938
+Training energy    : 69.48550790548325
+Embedding energy   : 0.008690357208251953\FLOPs               : 5.902M
+Parameters         : 296.065K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 15
+Validation mcc: 0.3320872423807555
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 1.5892128785451254
+Embedding time     : 0.00011587142944335938
+Training energy    : 119.1909658908844
+Embedding energy   : 0.008690357208251953\FLOPs               : 9.588M
+Parameters         : 481.345K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.22186297289345633
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 1.6079061371939523
+Embedding time     : 0.00011587142944335938
+Training energy    : 120.59296028954643
+Embedding energy   : 0.008690357208251953\FLOPs               : 9.588M
+Parameters         : 481.345K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 13
+Validation mcc: 0.35373958054436466
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.5261333538935735
+Embedding time     : 0.00011587142944335938
+Training energy    : 39.46000154201801
+Embedding energy   : 0.008690357208251953\FLOPs               : 11.812M
+Parameters         : 591.361K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 13
+Validation mcc: 0.3505814876316712
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.530082262479342
+Embedding time     : 0.00011587142944335938
+Training energy    : 39.756169685950645
+Embedding energy   : 0.008690357208251953\FLOPs               : 11.812M
+Parameters         : 591.361K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.331591891571218
+Validation f1: 0.6421568627450981
+Validation accuracy: 0.6421568627450981
+Training time      : 0.7739885118272569
+Embedding time     : 0.00011587142944335938
+Training energy    : 58.04913838704427
+Embedding energy   : 0.008690357208251953\FLOPs               : 35.405M
+Parameters         : 1.773M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.3389260201251351
+Validation f1: 0.6446078431372549
+Validation accuracy: 0.6446078431372549
+Training time      : 0.7730446921454536
+Embedding time     : 0.00011587142944335938
+Training energy    : 57.97835191090902
+Embedding energy   : 0.008690357208251953\FLOPs               : 35.405M
+Parameters         : 1.773M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.3552976496988665
+Validation f1: 0.6740196078431373
+Validation accuracy: 0.6740196078431373
+Training time      : 1.0534753799438477
+Embedding time     : 0.00011587142944335938
+Training energy    : 79.01065349578857
+Embedding energy   : 0.008690357208251953\FLOPs               : 58.998M
+Parameters         : 2.954M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.3349356529644953
+Validation f1: 0.6593137254901961
+Validation accuracy: 0.6593137254901961
+Training time      : 1.0507571299870808
+Embedding time     : 0.00011587142944335938
+Training energy    : 78.80678474903107
+Embedding energy   : 0.008690357208251953\FLOPs               : 58.998M
+Parameters         : 2.954M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.30391455120969385
+Validation f1: 0.6911764705882353
+Validation accuracy: 0.6911764705882353
+Training time      : 1.6398521900177
+Embedding time     : 0.00011587142944335938
+Training energy    : 122.98891425132751
+Embedding energy   : 0.008690357208251953\FLOPs               : 117.980M
+Parameters         : 5.907M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.26183725721957246
+Validation f1: 0.7156862745098039
+Validation accuracy: 0.7156862745098039
+Training time      : 1.6623040040334065
+Embedding time     : 0.00011587142944335938
+Training energy    : 124.6728003025055
+Embedding energy   : 0.008690357208251953\FLOPs               : 117.980M
+Parameters         : 5.907M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3072009233890448
+Validation f1: 0.6985294117647058
+Validation accuracy: 0.6985294117647058
+Training time      : 0.5180728673934937
+Embedding time     : 0.00011587142944335938
+Training energy    : 38.855465054512024
+Embedding energy   : 0.008690357208251953\FLOPs               : 23.624M
+Parameters         : 1.183M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3072009233890448
+Validation f1: 0.6985294117647058
+Validation accuracy: 0.6985294117647058
+Training time      : 0.521059513092041
+Embedding time     : 0.00011587142944335938
+Training energy    : 39.079463481903076
+Embedding energy   : 0.008690357208251953\FLOPs               : 23.624M
+Parameters         : 1.183M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.34566498501734805
+Validation f1: 0.7328431372549018
+Validation accuracy: 0.7328431372549019
+Training time      : 1.098754596710205
+Embedding time     : 0.00011587142944335938
+Training energy    : 82.40659475326538
+Embedding energy   : 0.008690357208251953\FLOPs               : 117.996M
+Parameters         : 5.904M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 5
+Validation mcc: 0.34148328980991305
+Validation f1: 0.7328431372549018
+Validation accuracy: 0.7328431372549019
+Training time      : 1.0884623050689697
+Embedding time     : 0.00011587142944335938
+Training energy    : 81.63467288017273
+Embedding energy   : 0.008690357208251953\FLOPs               : 117.996M
+Parameters         : 5.904M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.3232967762382682
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 1.7406487464904785
+Embedding time     : 0.00011587142944335938
+Training energy    : 130.5486559867859
+Embedding energy   : 0.008690357208251953\FLOPs               : 212.367M
+Parameters         : 10.626M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.3477087047346664
+Validation f1: 0.678921568627451
+Validation accuracy: 0.678921568627451
+Training time      : 1.7341153356764052
+Embedding time     : 0.00011587142944335938
+Training energy    : 130.05865017573038
+Embedding energy   : 0.008690357208251953\FLOPs               : 212.367M
+Parameters         : 10.626M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 12
+Validation mcc: 0.28012136629788226
+Validation f1: 0.7205882352941176
+Validation accuracy: 0.7205882352941176
+Training time      : 3.3783313433329263
+Embedding time     : 0.00011587142944335938
+Training energy    : 253.37485074996948
+Embedding energy   : 0.008690357208251953\FLOPs               : 448.297M
+Parameters         : 22.430M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 32, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 12
+Validation mcc: 0.3367801923286518
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 3.3790858586629233
+Embedding time     : 0.00011587142944335938
+Training energy    : 253.43143939971924
+Embedding energy   : 0.008690357208251953\FLOPs               : 448.297M
+Parameters         : 22.430M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 27
+Validation mcc: 0.32459796820103487
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.06553920993098507
+Embedding time     : 0.00011587142944335938
+Training energy    : 4.915440744823879
+Embedding energy   : 0.008690357208251953\FLOPs               : 775.152K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 27
+Validation mcc: 0.32016766568566984
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.05442779152481644
+Embedding time     : 0.00011587142944335938
+Training energy    : 4.082084364361233
+Embedding energy   : 0.008690357208251953\FLOPs               : 775.152K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 20
+Validation mcc: 0.3284054226388495
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 0.07405073642730713
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.553805232048035
+Embedding energy   : 0.008690357208251953\FLOPs               : 799.344K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 20
+Validation mcc: 0.3284054226388495
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 0.0718890905380249
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.391681790351868
+Embedding energy   : 0.008690357208251953\FLOPs               : 799.344K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 16
+Validation mcc: 0.33024501928444067
+Validation f1: 0.678921568627451
+Validation accuracy: 0.678921568627451
+Training time      : 0.0876319408416748
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.57239556312561
+Embedding energy   : 0.008690357208251953\FLOPs               : 823.536K
+Parameters         : 9.865K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 16
+Validation mcc: 0.3264882411158074
+Validation f1: 0.6715686274509803
+Validation accuracy: 0.6715686274509803
+Training time      : 0.0908060073852539
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.810450553894043
+Embedding energy   : 0.008690357208251953\FLOPs               : 823.536K
+Parameters         : 9.865K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 17
+Validation mcc: 0.3456110456791929
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.12799445320578182
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.599583990433636
+Embedding energy   : 0.008690357208251953\FLOPs               : 884.016K
+Parameters         : 10.645K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 21
+Validation mcc: 0.31198613942756614
+Validation f1: 0.696078431372549
+Validation accuracy: 0.696078431372549
+Training time      : 0.12922335806347074
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.691751854760307
+Embedding energy   : 0.008690357208251953\FLOPs               : 884.016K
+Parameters         : 10.645K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 19
+Validation mcc: 0.3816495155748155
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.05542034851877313
+Embedding time     : 0.00011587142944335938
+Training energy    : 4.156526138907985
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.101M
+Parameters         : 36.961K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 19
+Validation mcc: 0.37786386055501875
+Validation f1: 0.7083333333333334
+Validation accuracy: 0.7083333333333334
+Training time      : 0.050719185879355984
+Embedding time     : 0.00011587142944335938
+Training energy    : 3.803938940951699
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.101M
+Parameters         : 36.961K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 13
+Validation mcc: 0.33360828567164913
+Validation f1: 0.6715686274509803
+Validation accuracy: 0.6715686274509803
+Training time      : 0.07307736690227802
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.480802517670852
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.488M
+Parameters         : 41.665K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 13
+Validation mcc: 0.3301125252323087
+Validation f1: 0.6691176470588235
+Validation accuracy: 0.6691176470588235
+Training time      : 0.07207008508535531
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.4052563814016485
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.488M
+Parameters         : 41.665K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.3287514075301104
+Validation f1: 0.6519607843137255
+Validation accuracy: 0.6519607843137255
+Training time      : 0.08343124389648438
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.257343292236328
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.875M
+Parameters         : 46.369K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.3320806669957589
+Validation f1: 0.6544117647058824
+Validation accuracy: 0.6544117647058824
+Training time      : 0.0839801701632413
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.298512762243098
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.875M
+Parameters         : 46.369K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.13882354895273843
+Embedding time     : 0.00011587142944335938
+Training energy    : 10.411766171455383
+Embedding energy   : 0.008690357208251953\FLOPs               : 4.842M
+Parameters         : 58.129K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 6
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.13074084122975668
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.80556309223175
+Embedding energy   : 0.008690357208251953\FLOPs               : 4.842M
+Parameters         : 58.129K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 12
+Validation mcc: 0.37242988637777436
+Validation f1: 0.6911764705882353
+Validation accuracy: 0.6911764705882353
+Training time      : 0.05587430795033773
+Embedding time     : 0.00011587142944335938
+Training energy    : 4.19057309627533
+Embedding energy   : 0.008690357208251953\FLOPs               : 12.402M
+Parameters         : 147.841K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 12
+Validation mcc: 0.37242988637777436
+Validation f1: 0.6911764705882353
+Validation accuracy: 0.6911764705882353
+Training time      : 0.0505031943321228
+Embedding time     : 0.00011587142944335938
+Training energy    : 3.78773957490921
+Embedding energy   : 0.008690357208251953\FLOPs               : 12.402M
+Parameters         : 147.841K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.2917623974053007
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.0755692481994629
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.667693614959717
+Embedding energy   : 0.008690357208251953\FLOPs               : 18.596M
+Parameters         : 221.953K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.2978812459786315
+Validation f1: 0.7254901960784313
+Validation accuracy: 0.7254901960784313
+Training time      : 0.07035689353942871
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.276767015457153
+Embedding energy   : 0.008690357208251953\FLOPs               : 18.596M
+Parameters         : 221.953K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 15
+Validation mcc: 0.346273332677563
+Validation f1: 0.6470588235294118
+Validation accuracy: 0.6470588235294118
+Training time      : 0.08876883188883464
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.657662391662598
+Embedding energy   : 0.008690357208251953\FLOPs               : 24.789M
+Parameters         : 296.065K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 17
+Validation mcc: 0.31198613942756614
+Validation f1: 0.696078431372549
+Validation accuracy: 0.696078431372549
+Training time      : 0.09107464902541217
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.830598676905913
+Embedding energy   : 0.008690357208251953\FLOPs               : 24.789M
+Parameters         : 296.065K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 19
+Validation mcc: 0.32891410189301756
+Validation f1: 0.6911764705882353
+Validation accuracy: 0.6911764705882353
+Training time      : 0.134678978669016
+Embedding time     : 0.00011587142944335938
+Training energy    : 10.1009234001762
+Embedding energy   : 0.008690357208251953\FLOPs               : 40.272M
+Parameters         : 481.345K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.1434175968170166
+Embedding time     : 0.00011587142944335938
+Training energy    : 10.756319761276245
+Embedding energy   : 0.008690357208251953\FLOPs               : 40.272M
+Parameters         : 481.345K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3070666518590019
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.06631338596343994
+Embedding time     : 0.00011587142944335938
+Training energy    : 4.973503947257996
+Embedding energy   : 0.008690357208251953\FLOPs               : 49.610M
+Parameters         : 591.361K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3070666518590019
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.05947673320770264
+Embedding time     : 0.00011587142944335938
+Training energy    : 4.460754990577698
+Embedding energy   : 0.008690357208251953\FLOPs               : 49.610M
+Parameters         : 591.361K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3390983296498315
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.09705848693847656
+Embedding time     : 0.00011587142944335938
+Training energy    : 7.279386520385742
+Embedding energy   : 0.008690357208251953\FLOPs               : 148.700M
+Parameters         : 1.773M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.3063348819757717
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.09714065898548473
+Embedding time     : 0.00011587142944335938
+Training energy    : 7.2855494239113545
+Embedding energy   : 0.008690357208251953\FLOPs               : 148.700M
+Parameters         : 1.773M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.3053377832298521
+Validation f1: 0.6666666666666666
+Validation accuracy: 0.6666666666666666
+Training time      : 0.10916953616672093
+Embedding time     : 0.00011587142944335938
+Training energy    : 8.187715212504068
+Embedding energy   : 0.008690357208251953\FLOPs               : 247.791M
+Parameters         : 2.954M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 9
+Validation mcc: 0.25613242484536514
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.10792377259996203
+Embedding time     : 0.00011587142944335938
+Training energy    : 8.094282944997152
+Embedding energy   : 0.008690357208251953\FLOPs               : 247.791M
+Parameters         : 2.954M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.1724471092224121
+Embedding time     : 0.00011587142944335938
+Training energy    : 12.933533191680908
+Embedding energy   : 0.008690357208251953\FLOPs               : 495.517M
+Parameters         : 5.907M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 14
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.16578098705836705
+Embedding time     : 0.00011587142944335938
+Training energy    : 12.433574029377528
+Embedding energy   : 0.008690357208251953\FLOPs               : 495.517M
+Parameters         : 5.907M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3583019806853641
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.06924068927764893
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.193051695823669
+Embedding energy   : 0.008690357208251953\FLOPs               : 99.219M
+Parameters         : 1.183M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.3583019806853641
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.07758564949035644
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.818923711776733
+Embedding energy   : 0.008690357208251953\FLOPs               : 99.219M
+Parameters         : 1.183M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.29427058671623346
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.12455906867980956
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.341930150985718
+Embedding energy   : 0.008690357208251953\FLOPs               : 495.581M
+Parameters         : 5.904M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 12
+Validation mcc: 0.30491531724628623
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.12173958619435628
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.130468964576721
+Embedding energy   : 0.008690357208251953\FLOPs               : 495.581M
+Parameters         : 5.904M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 10
+Validation mcc: 0.30698010771926715
+Validation f1: 0.6911764705882353
+Validation accuracy: 0.6911764705882353
+Training time      : 0.20654795169830323
+Embedding time     : 0.00011587142944335938
+Training energy    : 15.491096377372742
+Embedding energy   : 0.008690357208251953\FLOPs               : 891.943M
+Parameters         : 10.626M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 12
+Validation mcc: 0.3727245897359569
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.20498661200205484
+Embedding time     : 0.00011587142944335938
+Training energy    : 15.373995900154114
+Embedding energy   : 0.008690357208251953\FLOPs               : 891.943M
+Parameters         : 10.626M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 12
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.4142222801844279
+Embedding time     : 0.00011587142944335938
+Training energy    : 31.066671013832092
+Embedding energy   : 0.008690357208251953\FLOPs               : 1.883G
+Parameters         : 22.430M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.01, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 7
+Validation mcc: 0.0
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.4289147172655378
+Embedding time     : 0.00011587142944335938
+Training energy    : 32.168603794915335
+Embedding energy   : 0.008690357208251953\FLOPs               : 1.883G
+Parameters         : 22.430M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.24593100837069598
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.05079446315765381
+Embedding time     : 0.00011587142944335938
+Training energy    : 3.8095847368240356
+Embedding energy   : 0.008690357208251953\FLOPs               : 775.152K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.24593100837069598
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.05041325092315674
+Embedding time     : 0.00011587142944335938
+Training energy    : 3.7809938192367554
+Embedding energy   : 0.008690357208251953\FLOPs               : 775.152K
+Parameters         : 9.241K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.27427965074394883
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.07229220867156982
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.421915650367737
+Embedding energy   : 0.008690357208251953\FLOPs               : 799.344K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.26950102341089527
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.07003939628601075
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.252954721450806
+Embedding energy   : 0.008690357208251953\FLOPs               : 799.344K
+Parameters         : 9.553K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.33344445370756204
+Validation f1: 0.696078431372549
+Validation accuracy: 0.696078431372549
+Training time      : 0.08682273387908936
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.511705040931702
+Embedding energy   : 0.008690357208251953\FLOPs               : 823.536K
+Parameters         : 9.865K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.33344445370756204
+Validation f1: 0.696078431372549
+Validation accuracy: 0.696078431372549
+Training time      : 0.08453390121459961
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.340042591094971
+Embedding energy   : 0.008690357208251953\FLOPs               : 823.536K
+Parameters         : 9.865K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.34212289749162067
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.12460578441619873
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.345433831214905
+Embedding energy   : 0.008690357208251953\FLOPs               : 884.016K
+Parameters         : 10.645K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 12, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.33816913235292756
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.12425529003143311
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.319146752357483
+Embedding energy   : 0.008690357208251953\FLOPs               : 884.016K
+Parameters         : 10.645K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.2877023558669601
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.05086760520935059
+Embedding time     : 0.00011587142944335938
+Training energy    : 3.815070390701294
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.101M
+Parameters         : 36.961K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.2877023558669601
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.050655121803283694
+Embedding time     : 0.00011587142944335938
+Training energy    : 3.799134135246277
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.101M
+Parameters         : 36.961K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 33
+Validation mcc: 0.36353766230612966
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.06769423773794463
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.077067830345848
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.488M
+Parameters         : 41.665K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 33
+Validation mcc: 0.3608442352342451
+Validation f1: 0.7230392156862746
+Validation accuracy: 0.7230392156862745
+Training time      : 0.0676606207182913
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.074546553871849
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.488M
+Parameters         : 41.665K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 31
+Validation mcc: 0.30898994670673374
+Validation f1: 0.696078431372549
+Validation accuracy: 0.696078431372549
+Training time      : 0.08106430884330504
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.079823163247878
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.875M
+Parameters         : 46.369K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 31
+Validation mcc: 0.30898994670673374
+Validation f1: 0.696078431372549
+Validation accuracy: 0.696078431372549
+Training time      : 0.08182785587926064
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.137089190944549
+Embedding energy   : 0.008690357208251953\FLOPs               : 3.875M
+Parameters         : 46.369K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 30
+Validation mcc: 0.3149985895482614
+Validation f1: 0.696078431372549
+Validation accuracy: 0.696078431372549
+Training time      : 0.12548380692799885
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.411285519599915
+Embedding energy   : 0.008690357208251953\FLOPs               : 4.842M
+Parameters         : 58.129K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 48, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 29
+Validation mcc: 0.31198613942756614
+Validation f1: 0.696078431372549
+Validation accuracy: 0.696078431372549
+Training time      : 0.12446063140342975
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.334547355257232
+Embedding energy   : 0.008690357208251953\FLOPs               : 4.842M
+Parameters         : 58.129K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.3320872423807555
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.04780590534210205
+Embedding time     : 0.00011587142944335938
+Training energy    : 3.585442900657654
+Embedding energy   : 0.008690357208251953\FLOPs               : 12.402M
+Parameters         : 147.841K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 50
+Validation mcc: 0.33511827377527786
+Validation f1: 0.7009803921568627
+Validation accuracy: 0.7009803921568627
+Training time      : 0.05025862693786621
+Embedding time     : 0.00011587142944335938
+Training energy    : 3.769397020339966
+Embedding energy   : 0.008690357208251953\FLOPs               : 12.402M
+Parameters         : 147.841K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 19
+Validation mcc: 0.32410916909530896
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.0688542692284835
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.164070192136262
+Embedding energy   : 0.008690357208251953\FLOPs               : 18.596M
+Parameters         : 221.953K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 19
+Validation mcc: 0.32410916909530896
+Validation f1: 0.6838235294117647
+Validation accuracy: 0.6838235294117647
+Training time      : 0.06862828606053402
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.147121454540052
+Embedding energy   : 0.008690357208251953\FLOPs               : 18.596M
+Parameters         : 221.953K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 17
+Validation mcc: 0.30682958104156055
+Validation f1: 0.7107843137254902
+Validation accuracy: 0.7107843137254902
+Training time      : 0.0866848019992604
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.50136014994453
+Embedding energy   : 0.008690357208251953\FLOPs               : 24.789M
+Parameters         : 296.065K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 17
+Validation mcc: 0.3114591988529386
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.09000883382909439
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.7506625371820785
+Embedding energy   : 0.008690357208251953\FLOPs               : 24.789M
+Parameters         : 296.065K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 18
+Validation mcc: 0.35550189225776246
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.13281513584984672
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.961135188738504
+Embedding energy   : 0.008690357208251953\FLOPs               : 40.272M
+Parameters         : 481.345K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 192, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 15
+Validation mcc: 0.3372069054072492
+Validation f1: 0.6715686274509803
+Validation accuracy: 0.6715686274509803
+Training time      : 0.13626434008280436
+Embedding time     : 0.00011587142944335938
+Training energy    : 10.219825506210327
+Embedding energy   : 0.008690357208251953\FLOPs               : 40.272M
+Parameters         : 481.345K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 40
+Validation mcc: 0.3647968959127308
+Validation f1: 0.7205882352941176
+Validation accuracy: 0.7205882352941176
+Training time      : 0.05751765966415405
+Embedding time     : 0.00011587142944335938
+Training energy    : 4.313824474811554
+Embedding energy   : 0.008690357208251953\FLOPs               : 49.610M
+Parameters         : 591.361K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 40
+Validation mcc: 0.3647968959127308
+Validation f1: 0.7205882352941176
+Validation accuracy: 0.7205882352941176
+Training time      : 0.05903892517089844
+Embedding time     : 0.00011587142944335938
+Training energy    : 4.427919387817383
+Embedding energy   : 0.008690357208251953\FLOPs               : 49.610M
+Parameters         : 591.361K
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 14
+Validation mcc: 0.3251053470227842
+Validation f1: 0.6887254901960784
+Validation accuracy: 0.6887254901960784
+Training time      : 0.09296861716679164
+Embedding time     : 0.00011587142944335938
+Training energy    : 6.972646287509373
+Embedding energy   : 0.008690357208251953\FLOPs               : 148.700M
+Parameters         : 1.773M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 14
+Validation mcc: 0.3251053470227842
+Validation f1: 0.6887254901960784
+Validation accuracy: 0.6887254901960784
+Training time      : 0.09576857089996338
+Embedding time     : 0.00011587142944335938
+Training energy    : 7.182642817497253
+Embedding energy   : 0.008690357208251953\FLOPs               : 148.700M
+Parameters         : 1.773M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.338218686137031
+Validation f1: 0.7132352941176471
+Validation accuracy: 0.7132352941176471
+Training time      : 0.10611213337291371
+Embedding time     : 0.00011587142944335938
+Training energy    : 7.958410002968528
+Embedding energy   : 0.008690357208251953\FLOPs               : 247.791M
+Parameters         : 2.954M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.346814815943193
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 0.10846020958640358
+Embedding time     : 0.00011587142944335938
+Training energy    : 8.13451571898027
+Embedding energy   : 0.008690357208251953\FLOPs               : 247.791M
+Parameters         : 2.954M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.316767902138905
+Validation f1: 0.6176470588235294
+Validation accuracy: 0.6176470588235294
+Training time      : 0.1624215082688765
+Embedding time     : 0.00011587142944335938
+Training energy    : 12.181613120165737
+Embedding energy   : 0.008690357208251953\FLOPs               : 495.517M
+Parameters         : 5.907M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 768, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 15
+Validation mcc: 0.28716781362193144
+Validation f1: 0.7156862745098039
+Validation accuracy: 0.7156862745098039
+Training time      : 0.16075143814086915
+Embedding time     : 0.00011587142944335938
+Training energy    : 12.056357860565186
+Embedding energy   : 0.008690357208251953\FLOPs               : 495.517M
+Parameters         : 5.907M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 30
+Validation mcc: 0.3387961374133448
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 0.07346414724985759
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.509811043739319
+Embedding energy   : 0.008690357208251953\FLOPs               : 99.219M
+Parameters         : 1.183M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 1, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 30
+Validation mcc: 0.3387961374133448
+Validation f1: 0.7181372549019608
+Validation accuracy: 0.7181372549019608
+Training time      : 0.07954010168711344
+Embedding time     : 0.00011587142944335938
+Training energy    : 5.965507626533508
+Embedding energy   : 0.008690357208251953\FLOPs               : 99.219M
+Parameters         : 1.183M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.2877023558669601
+Validation f1: 0.7034313725490197
+Validation accuracy: 0.7034313725490197
+Training time      : 0.1243999871340665
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.329999035054987
+Embedding energy   : 0.008690357208251953\FLOPs               : 495.581M
+Parameters         : 5.904M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 3, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.29768270290026694
+Validation f1: 0.7058823529411765
+Validation accuracy: 0.7058823529411765
+Training time      : 0.12201161818070845
+Embedding time     : 0.00011587142944335938
+Training energy    : 9.150871363553135
+Embedding energy   : 0.008690357208251953\FLOPs               : 495.581M
+Parameters         : 5.904M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 12
+Validation mcc: 0.29230191556012364
+Validation f1: 0.7058823529411765
+Validation accuracy: 0.7058823529411765
+Training time      : 0.20513667662938437
+Embedding time     : 0.00011587142944335938
+Training energy    : 15.385250747203827
+Embedding energy   : 0.008690357208251953\FLOPs               : 891.943M
+Parameters         : 10.626M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 5, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 12
+Validation mcc: 0.3521809260544443
+Validation f1: 0.6936274509803921
+Validation accuracy: 0.6936274509803921
+Training time      : 0.20528459548950195
+Embedding time     : 0.00011587142944335938
+Training energy    : 15.396344661712646
+Embedding energy   : 0.008690357208251953\FLOPs               : 891.943M
+Parameters         : 10.626M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.01, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 11
+Validation mcc: 0.3187016952310291
+Validation f1: 0.6887254901960784
+Validation accuracy: 0.6887254901960784
+Training time      : 0.42146247083490546
+Embedding time     : 0.00011587142944335938
+Training energy    : 31.60968531261791
+Embedding energy   : 0.008690357208251953\FLOPs               : 1.883G
+Parameters         : 22.430M
+
+Training with parameters:
+{'num_epochs': 50, 'batch_size': 512, 'learning_rate': 0.001, 'norm': False, 'input_size': 768, 'layer_size': 1536, 'num_classes': 1, 'num_layers': 10, 'weight_decay': 0.0001, 'patience': 3, 'min_delta': 0}
+Early stopped on epoch: 8
+Validation mcc: 0.1978134295456138
+Validation f1: 0.4877450980392157
+Validation accuracy: 0.4877450980392157
+Training time      : 0.4184699058532715
+Embedding time     : 0.00011587142944335938
+Training energy    : 31.38524293899536
+Embedding energy   : 0.008690357208251953\FLOPs               : 1.883G
+Parameters         : 22.430M

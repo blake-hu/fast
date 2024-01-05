@@ -5,6 +5,5 @@
 *.pt
 *.npy
 
-*/output/*
 fast/results
 fast/cache
