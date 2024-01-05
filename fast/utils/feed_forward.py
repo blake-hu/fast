@@ -7,9 +7,6 @@ import time
 from carbontracker.tracker import CarbonTracker
 from .energy import get_energy
 
-from thop import profile
-from thop import clever_format
-
 class EarlyStopper:
     """
     A utility class that stops training when a monitored metric stops improving.
@@ -61,7 +58,7 @@ class Data(torch.utils.data.Dataset):
         if not torch.is_tensor(X) and not torch.is_tensor(y):
             self.X = torch.from_numpy(X)
             self.y = torch.from_numpy(y)
-
+        
     def __len__(self):
         """
         Returns the number of samples in the dataset.
@@ -202,8 +199,6 @@ class FeedForward:
         # Benchmarking: track training time and power usage per epoch
         self.train_times_per_epoch = []
         self.energy_per_epoch = []
-        self.flops = 0
-        self.params_count = 0
 
     def fit(self, X, y, X_val=None, y_val=None, use_carbontracker=False):
         """
@@ -253,11 +248,6 @@ class FeedForward:
 
                 loss = self.loss_function(outputs, targets).to(self.device)
 
-                # FLOPs Counting
-                if epoch == 0:
-                    flops, params = profile(self.model, inputs=(inputs, ))
-                    self.flops, self.params_count = clever_format([flops, params], "%.3f") 
-
                 loss.backward()
                 current_loss.append(loss.item())
 
@@ -298,7 +288,7 @@ class FeedForward:
 
         # print(f'Training process has finished.')
         if X_val is not None and y_val is not None:
-            return metrics, self.train_times_per_epoch, self.energy_per_epoch, self.flops, self.params_count
+            return metrics, self.train_times_per_epoch, self.energy_per_epoch
 
     def _validate(self, X, y_true):
         """
