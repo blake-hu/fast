@@ -4,7 +4,6 @@ import torch.nn as nn
 from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef
 from scipy.stats import pearsonr, spearmanr
 import time
-from carbontracker.tracker import CarbonTracker
 from .energy import get_energy
 
 class EarlyStopper:
@@ -202,7 +201,7 @@ class FeedForward:
         self.train_times_per_epoch = []
         self.energy_per_epoch = []
 
-    def fit(self, X, y, X_val=None, y_val=None, use_carbontracker=False):
+    def fit(self, X, y, X_val=None, y_val=None):
         """
         Trains the model using the provided dataset.
 
@@ -223,20 +222,11 @@ class FeedForward:
         # Run the training loop
         trainloader = torch.utils.data.DataLoader(Data(
             X, y), batch_size=self.batch_size, shuffle=True, num_workers=0, drop_last=False)
-        
-        if use_carbontracker:
-            print("FFN: Using Carbontracker")
-            tracker = CarbonTracker(epochs=self.max_epochs) # initialize tracker
-        # else:
-        #     print("FFN: Using default time tracking")
 
         metrics_all = []
         is_stop = False
         for epoch in range(self.max_epochs):
-            if use_carbontracker:
-                tracker.epoch_start()
-            else:
-                epoch_start_time = time.time()  # Start time for this epoch
+            epoch_start_time = time.time()  # Start time for this epoch
 
             current_loss = []
 
@@ -263,16 +253,10 @@ class FeedForward:
                 metrics["epoch"] = epoch + 1
                 metrics_all.append(metrics)
 
-                if use_carbontracker:
-                    tracker.epoch_end()
-                    # temporary values for logging
-                    self.train_times_per_epoch.append(0)
-                    self.energy_per_epoch.append(0)
-                else:
-                    epoch_train_time = time.time() - epoch_start_time
-                    self.train_times_per_epoch.append(epoch_train_time)
-                    self.energy_per_epoch.append(
-                        get_energy(epoch_train_time, self.device))
+                epoch_train_time = time.time() - epoch_start_time
+                self.train_times_per_epoch.append(epoch_train_time)
+                self.energy_per_epoch.append(
+                    get_energy(epoch_train_time, self.device))
                 if self.verbose:
                     print(f"Epoch {metrics['epoch']}/{self.max_epochs} | Training Loss : {loss.item()} | Validation Loss : {metrics['loss']}")
                     print(f"Accuracy : {metrics['accuracy']} | f1 : {metrics['f1']}\n")
@@ -280,16 +264,10 @@ class FeedForward:
                     is_stop = True
                     break
             else:
-                if use_carbontracker:
-                    tracker.epoch_end()
-                    # temporary values for logging
-                    self.train_times_per_epoch.append(0)
-                    self.energy_per_epoch.append(0)
-                else:
-                    epoch_train_time = time.time() - epoch_start_time
-                    self.train_times_per_epoch.append(epoch_train_time)
-                    self.energy_per_epoch.append(
-                        get_energy(epoch_train_time, self.device))
+                epoch_train_time = time.time() - epoch_start_time
+                self.train_times_per_epoch.append(epoch_train_time)
+                self.energy_per_epoch.append(
+                    get_energy(epoch_train_time, self.device))
                 # print(
                 #     f"Epoch {metrics['epoch']}/{self.max_epochs} | Training Loss : {average_loss}")
 
