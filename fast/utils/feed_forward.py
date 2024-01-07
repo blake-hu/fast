@@ -134,7 +134,7 @@ class FeedForward:
 
     def __init__(
         self,
-        num_epochs,
+        max_epochs,
         batch_size,
         learning_rate,
         category,
@@ -146,13 +146,14 @@ class FeedForward:
         weight_decay,
         patience,
         min_delta,
-        device
+        device,
+        verbose=False
     ):
         """
         Initializes the FeedForward object with the given configurations.
 
         Args:
-            num_epochs: number of epochs to train.
+            max_epochs: max number of epochs to train.
             batch_size: size of the batch used in training.
             learning_rate: learning rate for the optimizer.
             category: type of problem ("BC" for binary classification, "R" for regression).
@@ -163,12 +164,13 @@ class FeedForward:
             min_delta: minimum change in monitored metric that resets the patience counter.
             device: device to run the model on (e.g., 'cuda' or 'cpu'). Defaults to 'cpu'.
         """
-        self.num_epochs = num_epochs
+        self.max_epochs = max_epochs
         self.batch_size = batch_size
         self.category = category
         self.patience = patience
         self.min_delta = min_delta
         self.num_classes = num_classes
+        self.verbose = verbose
 
         # Ensure device is set correctly depending on cuda availability
         self.device = torch.device(device)
@@ -224,11 +226,13 @@ class FeedForward:
         
         if use_carbontracker:
             print("FFN: Using Carbontracker")
-            tracker = CarbonTracker(epochs=self.num_epochs) # initialize tracker
+            tracker = CarbonTracker(epochs=self.max_epochs) # initialize tracker
         # else:
         #     print("FFN: Using default time tracking")
 
-        for epoch in range(self.num_epochs):
+        metrics_all = []
+        is_stop = False
+        for epoch in range(self.max_epochs):
             if use_carbontracker:
                 tracker.epoch_start()
             else:
@@ -257,6 +261,7 @@ class FeedForward:
             if X_val is not None and y_val is not None:
                 metrics = self._validate(X_val, y_val)
                 metrics["epoch"] = epoch + 1
+                metrics_all.append(metrics)
 
                 if use_carbontracker:
                     tracker.epoch_end()
@@ -268,9 +273,11 @@ class FeedForward:
                     self.train_times_per_epoch.append(epoch_train_time)
                     self.energy_per_epoch.append(
                         get_energy(epoch_train_time, self.device))
-                # print(
-                #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss} | Validation Loss : {metrics['loss']} | Pearson: {metrics['pearson']}")
+                if self.verbose:
+                    print(f"Epoch {metrics['epoch']}/{self.max_epochs} | Training Loss : {loss.item()} | Validation Loss : {metrics['loss']}")
+                    print(f"Accuracy : {metrics['accuracy']} | f1 : {metrics['f1']}\n")
                 if self.stopper.early_stop(metrics["loss"]):
+                    is_stop = True
                     break
             else:
                 if use_carbontracker:
@@ -284,10 +291,14 @@ class FeedForward:
                     self.energy_per_epoch.append(
                         get_energy(epoch_train_time, self.device))
                 # print(
-                #     f"Epoch {metrics['epoch']}/{self.num_epochs} | Training Loss : {average_loss}")
+                #     f"Epoch {metrics['epoch']}/{self.max_epochs} | Training Loss : {average_loss}")
 
         # print(f'Training process has finished.')
         if X_val is not None and y_val is not None:
+            if is_stop:
+                metrics = metrics_all[-1*self.patience - 1]
+            else:
+                metrics = metrics_all[-1]
             return metrics, self.train_times_per_epoch, self.energy_per_epoch
 
     def _validate(self, X, y_true):
