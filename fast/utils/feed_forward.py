@@ -6,6 +6,7 @@ from scipy.stats import pearsonr, spearmanr
 import time
 from .energy import get_energy
 
+
 class EarlyStopper:
     """
     A utility class that stops training when a monitored metric stops improving.
@@ -57,7 +58,7 @@ class Data(torch.utils.data.Dataset):
         if not torch.is_tensor(X) and not torch.is_tensor(y):
             self.X = torch.from_numpy(X)
             self.y = torch.from_numpy(y)
-        
+
     def __len__(self):
         """
         Returns the number of samples in the dataset.
@@ -258,8 +259,10 @@ class FeedForward:
                 self.energy_per_epoch.append(
                     get_energy(epoch_train_time, self.device))
                 if self.verbose:
-                    print(f"Epoch {metrics['epoch']}/{self.max_epochs} | Training Loss : {loss.item()} | Validation Loss : {metrics['loss']}")
-                    print(f"Accuracy : {metrics['accuracy']} | f1 : {metrics['f1']}\n")
+                    print(
+                        f"Epoch {metrics['epoch']}/{self.max_epochs} | Training Loss : {loss.item()} | Validation Loss : {metrics['loss']}")
+                    print(
+                        f"Accuracy : {metrics['accuracy']} | f1 : {metrics['f1']}\n")
                 if self.stopper.early_stop(metrics["loss"]):
                     is_stop = True
                     break
@@ -277,9 +280,12 @@ class FeedForward:
                 metrics = metrics_all[-1*self.patience - 1]
             else:
                 metrics = metrics_all[-1]
-            return metrics, self.train_times_per_epoch, self.energy_per_epoch
+        else:
+            metrics = {}  # no metrics to report
 
-    def _validate(self, X, y_true):
+        return metrics, self.train_times_per_epoch, self.energy_per_epoch
+
+    def _validate(self, X, y_true, return_predictions=False):
         """
         Validates the model on a provided validation set.
 
@@ -303,7 +309,7 @@ class FeedForward:
 
         if self.category == "BC":
             y_pred = (outputs_val >= 0.5).to(int).cpu()
-            return {
+            metrics = {
                 "loss": validation_loss,
                 "accuracy": accuracy_score(y_true, y_pred),
                 "f1": f1_score(y_true, y_pred, average="micro"),
@@ -314,7 +320,7 @@ class FeedForward:
             y_true = np.argmax(y_true, axis=1)
             y_pred = np.argmax(softmax(
                 outputs_val.cpu()), axis=1)
-            return {
+            metrics = {
                 "loss": validation_loss,
                 "accuracy": accuracy_score(y_true, y_pred),
                 "f1": f1_score(y_true, y_pred, average="micro"),
@@ -322,11 +328,16 @@ class FeedForward:
             }
         elif self.category == "R":
             outputs_val = outputs_val.squeeze().cpu().numpy()
-            return {
+            metrics = {
                 "loss": validation_loss,
                 "pearson": pearsonr(y_true, outputs_val).statistic,
                 "spearman": spearmanr(y_true, outputs_val).statistic,
             }
+
+        if return_predictions:
+            metrics["predictions"] = y_pred
+
+        return metrics
 
     def predict(self, X):
         """
@@ -369,5 +380,3 @@ class FeedForward:
         predictions = self.predict(X)
         difference = np.ones(predictions.shape) - predictions
         return np.concatenate((difference, predictions), axis=1)
-
-    
