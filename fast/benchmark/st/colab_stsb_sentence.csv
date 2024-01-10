@@ -1,0 +1,2 @@
+pearson,spearman,training time / epoch,embedding time,training energy / epoch,embedding energy,max_epochs,batch_size,learning_rate,category,norm,input_size,layer_size,num_classes,num_layers,weight_decay,patience,min_delta,verbose,device
+nan,nan,0.1107772445678711,0.0,8.308293342590332,0.0,50,512,0.01,R,False,768,768,1,5,0.0001,3,0,True,cuda

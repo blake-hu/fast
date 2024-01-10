@@ -12,7 +12,7 @@ cd fast
 conda create -y --name fast python==3.9
 conda activate fast
 pip install -r requirements.in
-pip uninstall transformersadapter-transformers
+pip uninstall transformers
 pip install adapter-transformers==3.2.1
 ```
 
