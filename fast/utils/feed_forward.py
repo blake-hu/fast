@@ -327,11 +327,11 @@ class FeedForward:
                 "mcc": matthews_corrcoef(y_true, y_pred)
             }
         elif self.category == "R":
-            outputs_val = outputs_val.squeeze().cpu().numpy()
+            y_pred = outputs_val.squeeze().cpu().numpy()
             metrics = {
                 "loss": validation_loss,
-                "pearson": pearsonr(y_true, outputs_val).statistic,
-                "spearman": spearmanr(y_true, outputs_val).statistic,
+                "pearson": pearsonr(y_true, y_pred).statistic,
+                "spearman": spearmanr(y_true, y_pred).statistic,
             }
 
         if return_predictions:

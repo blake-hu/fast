@@ -1,0 +1,2 @@
+mcc,f1,accuracy,training time / epoch,embedding time,training energy / epoch,embedding energy,max_epochs,batch_size,learning_rate,category,norm,input_size,layer_size,num_classes,num_layers,weight_decay,patience,min_delta,verbose,device
+0.0,0.0,0.0,0.0665807580947876,0.0,4.99355685710907,0.0,50,32,0.01,BC,False,768,768,1,1,0.01,3,0,True,cuda
