@@ -13,4 +13,3 @@ conda create -y --name fast python==3.9
 conda activate fast
 pip install -r requirements.in
 ```
-t
