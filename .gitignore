@@ -12,3 +12,4 @@ fast/cache
 *.zip
 CBOW_submission/
 glue_datasets/
+.ipynb_checkpoints/
