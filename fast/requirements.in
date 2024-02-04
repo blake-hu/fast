@@ -7,6 +7,7 @@ matplotlib==3.7.2
 torch==2.0.1
 datasets==2.14.5
 ipywidgets==8.1.1
-sentence-transformers==2.2.2
 jupyterlab==4.0.8
 pynvml==11.5.0
+sentence-transformers==2.3.1
+adapters==0.1.1
