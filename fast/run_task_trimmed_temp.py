@@ -294,15 +294,19 @@ def compute_single_embeddings(loader):
     model.eval()
     with torch.no_grad():
         for text in tqdm(loader):
-            encoded = tokenize_batch(tokenizer, text)
-            outputs = model(encoded["input_ids"], attention_mask=encoded["attention_mask"])
+            if embedding_param == "sentence":
+                embed = model.encode(text)
+            else:
+                encoded = tokenize_batch(tokenizer, text)
+                outputs = model(encoded["input_ids"], attention_mask=encoded["attention_mask"])
 
-            if embedding_param == "cls":
-                embed = extract_cls_embeddings(outputs)
-            elif embedding_param == "mean_pooling":
-                embed = mean_pooling(outputs, encoded["attention_mask"])
+                if embedding_param == "cls":
+                    embed = extract_cls_embeddings(outputs)
+                elif embedding_param == "mean_pooling":
+                    embed = mean_pooling(outputs, encoded["attention_mask"])
+                embed = embed.cpu().numpy()
                 
-            embeddings.append(embed.cpu().numpy())
+            embeddings.append(embed)
 
     return np.concatenate(embeddings, axis=0)
 
@@ -312,13 +316,14 @@ def compute_pair_embeddings(loader):
     with torch.no_grad():
 
         for text1, text2 in tqdm(loader):
-            encoded1 = tokenize_batch(tokenizer, text1)
-            encoded2 = tokenize_batch(tokenizer, text2)
-
+            
             if embedding_param == "sentence":
-                U = torch.tensor(model.encode(encoded1["input_ids"]))
-                V = torch.tensor(model.encode(encoded2["input_ids"]))
+                U = torch.tensor(model.encode(text1))
+                V = torch.tensor(model.encode(text2))
             else: # cls or mean_pooling
+                encoded1 = tokenize_batch(tokenizer, text1)
+                encoded2 = tokenize_batch(tokenizer, text2)
+
                 outputs1 = model(encoded1["input_ids"], attention_mask=encoded1["attention_mask"])
                 outputs2 = model(encoded2["input_ids"], attention_mask=encoded2["attention_mask"])
 

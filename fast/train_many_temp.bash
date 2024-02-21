@@ -47,9 +47,9 @@ for embed in "${embedding_types[@]}"; do
         echo "======= running: ${model} ${embed} ${task} ======="
         
         if [ -n "$device" ]; then
-            python3 run_task_trimmed.py --model "$model" --embedding "$embed" --task "$task" --device "$device" --concat "$concat"
+            python3 run_task_trimmed_temp.py --model "$model" --embedding "$embed" --task "$task" --device "$device" --concat "$concat"
         else
-            python3 run_task_trimmed.py --model "$model" --embedding "$embed" --task "$task" --concat "$concat"
+            python3 run_task_trimmed_temp.py --model "$model" --embedding "$embed" --task "$task" --concat "$concat"
         fi
 
     done
