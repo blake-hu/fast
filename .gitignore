@@ -16,3 +16,5 @@ glue_datasets/
 
 # plots
 plots/
+
+*.out
